@@ -1,0 +1,1 @@
+Error[e27]: Entry "GuangApp_HandleKeys::?relay" in module GuangApp ( C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\GuangApp.r51 ) redefined in module GuangApp485 ( C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj\GuangApp485.r51 )

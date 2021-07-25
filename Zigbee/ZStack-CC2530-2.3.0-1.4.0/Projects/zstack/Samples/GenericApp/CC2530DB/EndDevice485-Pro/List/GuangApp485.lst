@@ -1,0 +1,2749 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         23/Apr/2021  17:37:09 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\Source\GuangAp #
+#                          p485.c                                             #
+#    Command line       =  -f C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\GenericApp\CC2530DB\.. #
+#                          \..\..\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ     #
+#                          -DROOT=__near_func -DBLINK_LEDS) -f                #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x1454                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\Source\GuangAp #
+#                          p485.c -D ZIGBEEPRO -D NWK_AUTO_POLL -D ZTOOL_P1   #
+#                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D        #
+#                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC           #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\EndDe #
+#                          vice485-Pro\List\ -lA C:\zigbeetest\MyProject2\ZSt #
+#                          ack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Gen #
+#                          ericApp\CC2530DB\EndDevice485-Pro\List\            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\EndDe #
+#                          vice485-Pro\Obj\ -e --debug --core=plain           #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\zigbeetest\MyProject2\Z #
+#                          Stack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\G #
+#                          enericApp\CC2530DB\ -I C:\zigbeetest\MyProject2\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Ge #
+#                          nericApp\CC2530DB\..\SOURCE\ -I                    #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\ZMAIN\TI2530DB\ -I C:\zigbeetest\MyProject2\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Ge #
+#                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\    #
+#                          -I C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\GenericApp\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I       #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\OSAL\INCLUDE\ -I              #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\AF\ -I                  #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\NWK\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SEC\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SAPI\ -I                #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SYS\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\ZDO\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\ZMAC\F8W\ -I                  #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\ZMAC\ -I                      #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\SERVICES\SADDR\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\SERVICES\SDATA\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\INCLUDE\ -I               #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I       #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CH #
+#                          IP\ -Ohz                                           #
+#    List file          =  C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\EndDe #
+#                          vice485-Pro\List\GuangApp485.lst                   #
+#    Object file        =  C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\EndDe #
+#                          vice485-Pro\Obj\GuangApp485.r51                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\GenericApp\Source\GuangApp485.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include <string.h>
+      5          #include <stdio.h>
+      6          #include "OSAL.h"
+      7          #include "AF.h"
+      8          #include "ZDApp.h"
+      9          #include "ZDObject.h"
+     10          #include "ZDProfile.h"
+     11          
+     12          #include "GuangApp.h"
+     13          #include "DebugTrace.h"
+     14          
+     15          #if !defined( WIN32 )
+     16            #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     17          #endif
+     18          
+     19          /* HAL */
+     20          #include "hal_lcd.h"
+     21          #include "hal_led.h"
+     22          #include "hal_key.h"
+     23          #include "hal_uart.h"
+     24          #include "MT_UART.h"
+     25          
+     26          #include "DHT11.H"
+     27          #include "THC485.h"
+     28          
+     29          
+     30          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     31          const cId_t GuangApp_ClusterList[GENERICAPP_MAX_CLUSTERS] =
+   \                     GuangApp_ClusterList:
+   \   000000   0100         DW 1
+     32          {
+     33            GENERICAPP_CLUSTERID
+     34          };
+     35          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     36          const SimpleDescriptionFormat_t GuangApp_SimpleDesc =
+   \                     GuangApp_SimpleDesc:
+   \   000000   0F           DB 15
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW GuangApp_ClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW GuangApp_ClusterList
+     37          {
+     38            GENERICAPP_ENDPOINT,              //  int Endpoint;
+     39            GENERICAPP_PROFID,                //  uint16 AppProfId[2];
+     40            GENERICAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+     41            GENERICAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+     42            GENERICAPP_FLAGS,                 //  int   AppFlags:4;
+     43            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     44            (cId_t *)GuangApp_ClusterList,  //  byte *pAppInClusterList;
+     45            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     46            (cId_t *)GuangApp_ClusterList   //  byte *pAppInClusterList;
+     47          };
+     48          
+     49          // This is the Endpoint/Interface description.  It is defined here, but
+     50          // filled-in in GuangApp_Init().  Another way to go would be to fill
+     51          // in the structure here and make it a "const" (in code space).  The
+     52          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     53          endPointDesc_t GuangApp_epDesc;
+   \                     GuangApp_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     54          
+     55          /*********************************************************************
+     56           * EXTERNAL VARIABLES
+     57           */
+     58          
+     59          /*********************************************************************
+     60           * EXTERNAL FUNCTIONS
+     61           */
+     62          
+     63          /*********************************************************************
+     64           * LOCAL VARIABLES
+     65           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     66          byte GuangApp_TaskID;   // Task ID for internal task/event processing
+   \                     GuangApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     67                                    // This variable will be received when
+     68                                    // GuangApp_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     69          devStates_t GuangApp_NwkState;
+   \                     GuangApp_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     70          
+     71          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     72          byte GuangApp_TransID;  // This is the unique message ID (counter)
+   \                     GuangApp_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     73          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     74          afAddrType_t GuangApp_DstAddr;
+   \                     GuangApp_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     75          afAddrType_t GuangApp_Broadcast;   //广播
+   \                     GuangApp_Broadcast:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+     76          
+     77          
+     78          
+     79          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     80          static uint8 Light_Work_State;   //灯工作状态
+   \                     Light_Work_State:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     81          static uint8 Fans_Work_State;   //风扇工作状态
+   \                     Fans_Work_State:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     82          static uint8 Feng_Work_State;   //风扇工作状态
+   \                     Feng_Work_State:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     83          
+     84          #define FANS      P1_5           //风扇
+     85          #define FENG      P1_4            //蜂鸣器控制端口
+     86          #define MYLED     P1_1            //灯控制端口        
+     87          #define MQ_PIN    P0_6            //可燃气体传感器控制端口  
+     88          #define LIGHT_PIN P1_6            //光敏传感器控制端口
+     89          
+     90          #define GUANG_APP_TX_MAX  25
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     91          static uint8 GuangApp_TxBuf[GUANG_APP_TX_MAX+1];
+   \                     GuangApp_TxBuf:
+   \   000000                DS 26
+   \   00001A                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     92          static uint8 GuangApp_TxLen;
+   \                     GuangApp_TxLen:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     93          uint8 THCAsk[8]={0x01, 0x03, 0x00, 0x00, 0x00, 0x08, 0x44, 0x0c};
+   \                     THCAsk:
+   \   000000                DS 8
+   \   000008                REQUIRE `?<Initializer for THCAsk>`
+   \   000008                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     94          uint16 THCnum = 0;
+   \                     THCnum:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     95          uint8 THCstr[15];
+   \                     THCstr:
+   \   000000                DS 15
+   \   00000F                REQUIRE __INIT_XDATA_Z
+     96            
+     97          extern uint16 temperture;
+     98          extern uint16 temperture_shi, temperture_ge, temperture_xiao;
+     99          extern uint16 humidity485;
+    100          extern uint16 humidity_shi, humidity_ge, humidity_xiao;
+    101          extern uint16 CO2;
+    102          extern uint16 CO2_qian, CO2_bai, CO2_shi, CO2_ge;
+    103          /*********************************************************************
+    104           * LOCAL FUNCTIONS
+    105           */
+    106          void GuangApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    107          void GuangApp_HandleKeys( byte shift, byte keys );
+    108          void GuangApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    109          void GuangApp_SendTheMessage( void );
+    110          extern uint16 GetCrcData(uint8 *buffer, uint16 len);
+    111          /*********************************************************************
+    112           * NETWORK LAYER CALLBACKS
+    113           */
+    114          
+    115          /*********************************************************************
+    116           * PUBLIC FUNCTIONS
+    117           */
+    118          
+    119          /*********************************************************************
+    120           * @fn      GuangApp_Init
+    121           *
+    122           * @brief   Initialization function for the Generic App Task.
+    123           *          This is called during initialization and should contain
+    124           *          any application specific initialization (ie. hardware
+    125           *          initialization/setup, table initialization, power up
+    126           *          notificaiton ... ).
+    127           *
+    128           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    129           *                    used to send messages and set timers.
+    130           *
+    131           * @return  none
+    132           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    133          void GuangApp_Init( byte task_id )
+   \                     GuangApp_Init:
+    134          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    135            GuangApp_TaskID = task_id;
+   \   000007   90....       MOV     DPTR,#GuangApp_TaskID
+   \   00000A   F0           MOVX    @DPTR,A
+    136            GuangApp_NwkState = DEV_INIT;
+   \   00000B   90....       MOV     DPTR,#GuangApp_NwkState
+   \   00000E   7401         MOV     A,#0x1
+   \   000010   F0           MOVX    @DPTR,A
+    137            GuangApp_TransID = 0;
+   \   000011   90....       MOV     DPTR,#GuangApp_TransID
+   \   000014   E4           CLR     A
+   \   000015   F0           MOVX    @DPTR,A
+    138          
+    139            //------------------------配置串口---------------------------------TXD----接p0_4  RXD--接P0_5
+    140            MT_UartInit();                    //串口初始化   里面可以修改波特率
+   \   000016                ; Setup parameters for call to function MT_UartInit
+   \   000016   12....       LCALL   ??MT_UartInit?relay
+    141            MT_UartRegisterTaskID(task_id);   //注册串口任务
+   \   000019                ; Setup parameters for call to function MT_UartRegisterTaskID
+   \   000019   EE           MOV     A,R6
+   \   00001A   F9           MOV     R1,A
+   \   00001B   12....       LCALL   ??MT_UartRegisterTaskID?relay
+    142            HalUARTWrite(0,"\n strTemp\n", sizeof("\n strTemp\n"));//串口发送
+   \   00001E                ; Setup parameters for call to function HalUARTWrite
+   \   00001E   7C0B         MOV     R4,#0xb
+   \   000020   7D00         MOV     R5,#0x0
+   \   000022   7A..         MOV     R2,#`?<Constant "\\n strTemp\\n">` & 0xff
+   \   000024   7B..         MOV     R3,#(`?<Constant "\\n strTemp\\n">` >> 8) & 0xff
+   \   000026   7900         MOV     R1,#0x0
+   \   000028   12....       LCALL   ??HalUARTWrite?relay
+    143            //-----------------------------------------------------------------
+    144          
+    145             //----------初始化IO口-------------------
+    146            P0SEL &= 0x3f;                //P0_6 7定义为通用IO口  0011 1111
+   \   00002B   53F33F       ANL     0xf3,#0x3f
+    147            P1SEL &= 0x8d;                //P1_1 4 5 6定义为通用IO口  1000 1101
+   \   00002E   53F48D       ANL     0xf4,#0x8d
+    148            P0DIR &= ~0xc0;               //P0_6 7初始化为输入口  0011 1111
+   \   000031   53FD3F       ANL     0xfd,#0x3f
+    149            P1DIR |= 0x32;                 //P1_1 4 5初始化为输出口   0011 0010
+   \   000034   43FE32       ORL     0xfe,#0x32
+    150            P1DIR &= ~0x40;               //P1_6初始化为输入口  
+   \   000037   53FEBF       ANL     0xfe,#0xbf
+    151            //----------------------------------------
+    152            Light_Work_State = 0;
+   \   00003A   90....       MOV     DPTR,#Light_Work_State
+   \   00003D   E4           CLR     A
+   \   00003E   F0           MOVX    @DPTR,A
+    153            Feng_Work_State = 0;
+   \   00003F   90....       MOV     DPTR,#Feng_Work_State
+   \   000042   F0           MOVX    @DPTR,A
+    154            Fans_Work_State = 0; //默认风扇 蜂鸣器 和 灯是自动工作状态
+   \   000043   90....       MOV     DPTR,#Fans_Work_State
+   \   000046   F0           MOVX    @DPTR,A
+    155            MYLED = 0;                 //熄灭灯    
+   \   000047   C291         CLR     0x90.1
+    156            FANS = 0;                 //风扇关
+   \   000049   C295         CLR     0x90.5
+    157            FENG = 0;                 //关蜂鸣器
+   \   00004B   C294         CLR     0x90.4
+    158            
+    159            // Broadcast to everyone 发送模式:广播发送
+    160            GuangApp_Broadcast.addrMode = (afAddrMode_t)AddrBroadcast;//广播
+   \   00004D   90....       MOV     DPTR,#GuangApp_Broadcast + 8
+   \   000050   740F         MOV     A,#0xf
+   \   000052   F0           MOVX    @DPTR,A
+    161            GuangApp_Broadcast.endPoint = GENERICAPP_ENDPOINT; //指定端点号
+   \   000053   A3           INC     DPTR
+   \   000054   F0           MOVX    @DPTR,A
+    162            GuangApp_Broadcast.addr.shortAddr = 0xFFFF;//指定目的网络地址为广播地址
+   \   000055   90....       MOV     DPTR,#GuangApp_Broadcast
+   \   000058   74FF         MOV     A,#-0x1
+   \   00005A   F0           MOVX    @DPTR,A
+   \   00005B   A3           INC     DPTR
+   \   00005C   F0           MOVX    @DPTR,A
+    163            
+    164            GuangApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00005D   90....       MOV     DPTR,#GuangApp_DstAddr + 8
+   \   000060   7402         MOV     A,#0x2
+   \   000062   F0           MOVX    @DPTR,A
+    165            GuangApp_DstAddr.endPoint = GENERICAPP_ENDPOINT;
+   \   000063   A3           INC     DPTR
+   \   000064   740F         MOV     A,#0xf
+   \   000066   F0           MOVX    @DPTR,A
+    166            GuangApp_DstAddr.addr.shortAddr = 0x0000;
+   \   000067   90....       MOV     DPTR,#GuangApp_DstAddr
+   \   00006A   E4           CLR     A
+   \   00006B   F0           MOVX    @DPTR,A
+   \   00006C   A3           INC     DPTR
+   \   00006D   F0           MOVX    @DPTR,A
+    167          
+    168            // Fill out the endpoint description.
+    169            GuangApp_epDesc.endPoint = GENERICAPP_ENDPOINT;
+   \   00006E   90....       MOV     DPTR,#GuangApp_epDesc
+   \   000071   740F         MOV     A,#0xf
+   \   000073   F0           MOVX    @DPTR,A
+    170            GuangApp_epDesc.task_id = &GuangApp_TaskID;
+   \   000074   A3           INC     DPTR
+   \   000075   74..         MOV     A,#GuangApp_TaskID & 0xff
+   \   000077   F0           MOVX    @DPTR,A
+   \   000078   A3           INC     DPTR
+   \   000079   74..         MOV     A,#(GuangApp_TaskID >> 8) & 0xff
+   \   00007B   F0           MOVX    @DPTR,A
+    171            GuangApp_epDesc.simpleDesc
+    172                      = (SimpleDescriptionFormat_t *)&GuangApp_SimpleDesc;
+   \   00007C   A3           INC     DPTR
+   \   00007D   74..         MOV     A,#GuangApp_SimpleDesc & 0xff
+   \   00007F   F0           MOVX    @DPTR,A
+   \   000080   A3           INC     DPTR
+   \   000081   74..         MOV     A,#(GuangApp_SimpleDesc >> 8) & 0xff
+   \   000083   F0           MOVX    @DPTR,A
+    173            GuangApp_epDesc.latencyReq = noLatencyReqs;
+   \   000084   A3           INC     DPTR
+   \   000085   E4           CLR     A
+   \   000086   F0           MOVX    @DPTR,A
+    174          
+    175            // Register the endpoint description with the AF
+    176            afRegister( &GuangApp_epDesc );
+   \   000087                ; Setup parameters for call to function afRegister
+   \   000087   7A..         MOV     R2,#GuangApp_epDesc & 0xff
+   \   000089   7B..         MOV     R3,#(GuangApp_epDesc >> 8) & 0xff
+   \   00008B   12....       LCALL   ??afRegister?relay
+    177          
+    178            // Register for all key events - This app will handle all key events
+    179            RegisterForKeys( GuangApp_TaskID );
+   \   00008E                ; Setup parameters for call to function RegisterForKeys
+   \   00008E   90....       MOV     DPTR,#GuangApp_TaskID
+   \   000091   E0           MOVX    A,@DPTR
+   \   000092   F9           MOV     R1,A
+   \   000093   12....       LCALL   ??RegisterForKeys?relay
+    180          
+    181            // Update the display
+    182          #if defined ( LCD_SUPPORTED )
+    183              HalLcdWriteString( "GuangApp", HAL_LCD_LINE_1 );
+   \   000096                ; Setup parameters for call to function HalLcdWriteString
+   \   000096   7901         MOV     R1,#0x1
+   \   000098   7A..         MOV     R2,#`?<Constant "GuangApp">` & 0xff
+   \   00009A   7B..         MOV     R3,#(`?<Constant "GuangApp">` >> 8) & 0xff
+   \   00009C   12....       LCALL   ??HalLcdWriteString?relay
+    184          #endif
+    185              
+    186          //  ZDO_RegisterForZDOMsg( GuangApp_TaskID, End_Device_Bind_rsp );    ???
+    187          //  ZDO_RegisterForZDOMsg( GuangApp_TaskID, Match_Desc_rsp );      ???
+    188          }
+   \   00009F   7F01         MOV     R7,#0x1
+   \   0000A1   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000A4                REQUIRE P0SEL
+   \   0000A4                REQUIRE P1SEL
+   \   0000A4                REQUIRE P0DIR
+   \   0000A4                REQUIRE P1DIR
+   \   0000A4                REQUIRE _A_P1
+    189          
+    190          /*********************************************************************
+    191           * @fn      GuangApp_ProcessEvent
+    192           *
+    193           * @brief   Generic Application Task event processor.  This function
+    194           *          is called to process all events for the task.  Events
+    195           *          include timers, messages and any other user defined events.
+    196           *
+    197           * @param   task_id  - The OSAL assigned task ID.
+    198           * @param   events - events to process.  This is a bit map and can
+    199           *                   contain more than one event.
+    200           *
+    201           * @return  none
+    202           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    203          UINT16 GuangApp_ProcessEvent( byte task_id, UINT16 events )
+   \                     GuangApp_ProcessEvent:
+    204          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 0,R2
+   \   00000C   8B..         MOV     ?V0 + 1,R3
+    205            afIncomingMSGPacket_t *MSGpkt;
+    206            afDataConfirm_t *afDataConfirm;
+    207          
+    208            // Data Confirmation message fields
+    209            byte sentEP;
+    210            ZStatus_t sentStatus;
+    211            byte sentTransID;       // This should match the value sent
+    212            (void)task_id;  // Intentionally unreferenced parameter
+    213            byte lineone[12];
+    214            
+    215            if ( events & SYS_EVENT_MSG )
+   \   00000E   EB           MOV     A,R3
+   \   00000F   5480         ANL     A,#0x80
+   \   000011   7003         JNZ     $+5
+   \   000013   02....       LJMP    ??GuangApp_ProcessEvent_0 & 0xFFFF
+    216            {
+    217              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GuangApp_TaskID );
+   \   000016                ; Setup parameters for call to function osal_msg_receive
+   \   000016   8042         SJMP    ??GuangApp_ProcessEvent_1
+    218              while ( MSGpkt )
+    219              {
+    220                switch ( MSGpkt->hdr.event )
+    221                {
+    222                  case ZDO_CB_MSG:
+    223                    GuangApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    224                    break;
+    225                    
+    226                  case KEY_CHANGE:
+    227                    GuangApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    228                    break;
+    229          
+    230                  case AF_DATA_CONFIRM_CMD:
+    231                    // This message is received as a confirmation of a data packet sent.
+    232                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    233                    // The message fields are defined in AF.h
+    234                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    235                    sentEP = afDataConfirm->endpoint;
+    236                    sentStatus = afDataConfirm->hdr.status;
+    237                    sentTransID = afDataConfirm->transID;
+    238                    (void)sentEP;
+    239                    (void)sentTransID;
+    240          
+    241                    // Action taken when confirmation is received.
+    242                    if ( sentStatus != ZSuccess )
+    243                    {
+    244                      // The data wasn't delivered -- Do something
+    245                    }
+    246                    break;
+    247          
+    248                  case AF_INCOMING_MSG_CMD:
+    249                    GuangApp_MessageMSGCB( MSGpkt );
+    250                    break;
+    251          
+    252                  case ZDO_STATE_CHANGE:
+    253                    
+    254                    GuangApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    255                    if (GuangApp_NwkState == DEV_END_DEVICE)
+    256                    {
+    257                      lineone[0] = 'E';
+    258                      lineone[1] = 'n';
+    259                      lineone[2] = 'd';
+    260                      lineone[3] = 'D';
+    261          
+    262                      lineone[4] = 'e';
+    263                      lineone[5] = 'v';
+    264                      lineone[6] = 'i';
+    265                      lineone[7] = 'c';
+    266                      lineone[8] = 'e';
+    267                      lineone[9] = ':';
+    268                      lineone[10] = ZIGBEE_ID;
+    269                      lineone[11] = '\0';   
+    270                      
+    271                    }else if(GuangApp_NwkState == DEV_ROUTER)
+    272                    {
+    273                      
+    274                      lineone[0] = 'R';
+    275                      lineone[1] = 'o';
+    276                      lineone[2] = 'u';
+    277                      lineone[3] = 't';
+    278          
+    279                      lineone[4] = 'e';
+    280                      lineone[5] = 'r';
+    281                      lineone[6] = ':';
+    282                      lineone[7] = ZIGBEE_ID;
+    283                      lineone[8] = '\0';
+    284                      
+    285                    }
+    286                    
+    287                    
+    288                    
+    289                    if ( //(GuangApp_NwkState == DEV_ZB_COORD)|| 
+    290                        (GuangApp_NwkState == DEV_ROUTER)
+    291                        ||(GuangApp_NwkState == DEV_END_DEVICE) )
+    292                        {
+    293                          LcdClearLine(0,8);  //清空
+    294                          LCD_P8x16Str(0, 0, lineone); //id
+    295                          LCD_P16x16Ch(16,2,4*16);   //光
+    296                          LCD_P16x16Ch(32,2,5*16);  //照
+    297                          LCD_P16x16Ch(96,2,6*16);  //燃
+    298                          LCD_P16x16Ch(112,2,7*16);  //气
+    299                        for(int i=0; i<3; i++) //输出温度、湿度提示字符 
+    300                        { 
+    301                          if(i==0) 
+    302                          { 
+    303                            LCD_P16x16Ch(i*16,4,i*16); 
+    304                            LCD_P16x16Ch(i*16,6,(i+3)*16); 
+    305                          } 
+    306                          else 
+    307                          { 
+    308                            LCD_P16x16Ch(i*16,4,i*16); 
+   \                     ??GuangApp_ProcessEvent_2:
+   \   000018   12....       LCALL   ?Subroutine8 & 0xFFFF
+    309                            LCD_P16x16Ch(i*16,6,i*16); 
+   \                     ??CrossCallReturnLabel_36:
+   \   00001B   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_38:
+   \   00001E   9401         SUBB    A,#0x1
+   \   000020   EF           MOV     A,R7
+   \   000021   9400         SUBB    A,#0x0
+   \   000023   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000025   65D0         XRL     A,PSW
+   \   000027   33           RLC     A
+   \   000028   5003         JNC     $+5
+   \   00002A   02....       LJMP    ??GuangApp_ProcessEvent_3 & 0xFFFF
+   \   00002D   7E01         MOV     R6,#0x1
+   \   00002F   7F00         MOV     R7,#0x0
+   \                     ??GuangApp_ProcessEvent_4:
+   \   000031   12....       LCALL   ?Subroutine8 & 0xFFFF
+    310                          } 
+   \                     ??CrossCallReturnLabel_37:
+   \   000034   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   000037   9403         SUBB    A,#0x3
+   \   000039   EF           MOV     A,R7
+   \   00003A   9400         SUBB    A,#0x0
+   \   00003C   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00003E   65D0         XRL     A,PSW
+   \   000040   33           RLC     A
+   \   000041   40EE         JC      ??GuangApp_ProcessEvent_4
+    311                        } 
+    312                        
+    313                      // Start sending "the" message in a regular interval.
+    314                      osal_start_timerEx( GuangApp_TaskID,
+    315                                          GENERICAPP_SEND_MSG_EVT,
+    316                                        GENERICAPP_SEND_MSG_TIMEOUT );
+   \   000043                ; Setup parameters for call to function osal_start_timerEx
+   \   000043   7C48         MOV     R4,#0x48
+   \   000045   7D26         MOV     R5,#0x26
+   \   000047   7A01         MOV     R2,#0x1
+   \   000049   7B00         MOV     R3,#0x0
+   \   00004B   90....       MOV     DPTR,#GuangApp_TaskID
+   \   00004E   E0           MOVX    A,@DPTR
+   \   00004F   F9           MOV     R1,A
+   \   000050   12....       LCALL   ??osal_start_timerEx?relay
+    317          //          GuangApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    318          //          if ( //(GuangApp_NwkState == DEV_ZB_COORD)||
+    319          //               (GuangApp_NwkState == DEV_ROUTER)
+    320          //              || 
+    321          //                (GuangApp_NwkState == DEV_END_DEVICE) )
+    322          //          {
+    323          //            // Start sending "the" message in a regular interval.
+    324          //            osal_start_timerEx( GuangApp_TaskID,
+    325          //                                GENERICAPP_SEND_MSG_EVT,
+    326          //                              GENERICAPP_SEND_MSG_TIMEOUT );
+    327                    }
+    328                    break;
+    329          
+    330                  default:
+    331                    break;
+    332                }
+    333          
+    334                // Release the memory
+    335                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??GuangApp_ProcessEvent_5:
+   \   000053                ; Setup parameters for call to function osal_msg_deallocate
+   \   000053   AA..         MOV     R2,?V0 + 2
+   \   000055   AB..         MOV     R3,?V0 + 3
+   \   000057   12....       LCALL   ??osal_msg_deallocate?relay
+    336          
+    337                // Next
+    338                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GuangApp_TaskID );
+   \   00005A                ; Setup parameters for call to function osal_msg_receive
+   \                     ??GuangApp_ProcessEvent_1:
+   \   00005A   90....       MOV     DPTR,#GuangApp_TaskID
+   \   00005D   E0           MOVX    A,@DPTR
+   \   00005E   F9           MOV     R1,A
+   \   00005F   12....       LCALL   ??osal_msg_receive?relay
+   \   000062   8A..         MOV     ?V0 + 2,R2
+   \   000064   8B..         MOV     ?V0 + 3,R3
+   \   000066   E5..         MOV     A,?V0 + 2
+   \   000068   45..         ORL     A,?V0 + 3
+   \   00006A   7003         JNZ     $+5
+   \   00006C   02....       LJMP    ??GuangApp_ProcessEvent_6 & 0xFFFF
+   \   00006F   85..82       MOV     DPL,?V0 + 2
+   \   000072   85..83       MOV     DPH,?V0 + 3
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   24E6         ADD     A,#-0x1a
+   \   000078   6011         JZ      ??GuangApp_ProcessEvent_7
+   \   00007A   2449         ADD     A,#0x49
+   \   00007C   6016         JZ      ??GuangApp_ProcessEvent_8
+   \   00007E   24FE         ADD     A,#-0x2
+   \   000080   70D1         JNZ     ??GuangApp_ProcessEvent_5
+   \   000082                ; Setup parameters for call to function GuangApp_ProcessZDOMsgs
+   \   000082   AA..         MOV     R2,?V0 + 2
+   \   000084   AB..         MOV     R3,?V0 + 3
+   \   000086   12....       LCALL   ??GuangApp_ProcessZDOMsgs?relay
+   \   000089   80C8         SJMP    ??GuangApp_ProcessEvent_5
+   \                     ??GuangApp_ProcessEvent_7:
+   \   00008B                ; Setup parameters for call to function GuangApp_MessageMSGCB
+   \   00008B   AA..         MOV     R2,?V0 + 2
+   \   00008D   AB..         MOV     R3,?V0 + 3
+   \   00008F   12....       LCALL   ??GuangApp_MessageMSGCB?relay
+   \   000092   80BF         SJMP    ??GuangApp_ProcessEvent_5
+   \                     ??GuangApp_ProcessEvent_8:
+   \   000094   A3           INC     DPTR
+   \   000095   E0           MOVX    A,@DPTR
+   \   000096   90....       MOV     DPTR,#GuangApp_NwkState
+   \   000099   F0           MOVX    @DPTR,A
+   \   00009A   6406         XRL     A,#0x6
+   \   00009C   705D         JNZ     ??GuangApp_ProcessEvent_9
+   \   00009E   85..82       MOV     DPL,?XSP + 0
+   \   0000A1   85..83       MOV     DPH,?XSP + 1
+   \   0000A4   7445         MOV     A,#0x45
+   \   0000A6   F0           MOVX    @DPTR,A
+   \   0000A7   7401         MOV     A,#0x1
+   \   0000A9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AC   746E         MOV     A,#0x6e
+   \   0000AE   F0           MOVX    @DPTR,A
+   \   0000AF   7402         MOV     A,#0x2
+   \   0000B1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B4   7464         MOV     A,#0x64
+   \   0000B6   F0           MOVX    @DPTR,A
+   \   0000B7   7403         MOV     A,#0x3
+   \   0000B9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000BC   7444         MOV     A,#0x44
+   \   0000BE   F0           MOVX    @DPTR,A
+   \   0000BF   7404         MOV     A,#0x4
+   \   0000C1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C4   7465         MOV     A,#0x65
+   \   0000C6   F0           MOVX    @DPTR,A
+   \   0000C7   7405         MOV     A,#0x5
+   \   0000C9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CC   7476         MOV     A,#0x76
+   \   0000CE   F0           MOVX    @DPTR,A
+   \   0000CF   7406         MOV     A,#0x6
+   \   0000D1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D4   7469         MOV     A,#0x69
+   \   0000D6   F0           MOVX    @DPTR,A
+   \   0000D7   7407         MOV     A,#0x7
+   \   0000D9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DC   7463         MOV     A,#0x63
+   \   0000DE   F0           MOVX    @DPTR,A
+   \   0000DF   7408         MOV     A,#0x8
+   \   0000E1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E4   7465         MOV     A,#0x65
+   \   0000E6   F0           MOVX    @DPTR,A
+   \   0000E7   7409         MOV     A,#0x9
+   \   0000E9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000EC   743A         MOV     A,#0x3a
+   \   0000EE   F0           MOVX    @DPTR,A
+   \   0000EF   740A         MOV     A,#0xa
+   \   0000F1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F4   7431         MOV     A,#0x31
+   \   0000F6   F0           MOVX    @DPTR,A
+   \   0000F7   740B         MOV     A,#0xb
+   \   0000F9   804B         SJMP    ??GuangApp_ProcessEvent_10
+   \                     ??GuangApp_ProcessEvent_9:
+   \   0000FB   E0           MOVX    A,@DPTR
+   \   0000FC   6407         XRL     A,#0x7
+   \   0000FE   6003         JZ      $+5
+   \   000100   02....       LJMP    ??GuangApp_ProcessEvent_5 & 0xFFFF
+   \   000103   85..82       MOV     DPL,?XSP + 0
+   \   000106   85..83       MOV     DPH,?XSP + 1
+   \   000109   7452         MOV     A,#0x52
+   \   00010B   F0           MOVX    @DPTR,A
+   \   00010C   7401         MOV     A,#0x1
+   \   00010E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000111   746F         MOV     A,#0x6f
+   \   000113   F0           MOVX    @DPTR,A
+   \   000114   7402         MOV     A,#0x2
+   \   000116   12....       LCALL   ?XSTACK_DISP0_8
+   \   000119   7475         MOV     A,#0x75
+   \   00011B   F0           MOVX    @DPTR,A
+   \   00011C   7403         MOV     A,#0x3
+   \   00011E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000121   7474         MOV     A,#0x74
+   \   000123   F0           MOVX    @DPTR,A
+   \   000124   7404         MOV     A,#0x4
+   \   000126   12....       LCALL   ?XSTACK_DISP0_8
+   \   000129   7465         MOV     A,#0x65
+   \   00012B   F0           MOVX    @DPTR,A
+   \   00012C   7405         MOV     A,#0x5
+   \   00012E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000131   7472         MOV     A,#0x72
+   \   000133   F0           MOVX    @DPTR,A
+   \   000134   7406         MOV     A,#0x6
+   \   000136   12....       LCALL   ?XSTACK_DISP0_8
+   \   000139   743A         MOV     A,#0x3a
+   \   00013B   F0           MOVX    @DPTR,A
+   \   00013C   7407         MOV     A,#0x7
+   \   00013E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000141   7431         MOV     A,#0x31
+   \   000143   F0           MOVX    @DPTR,A
+   \   000144   7408         MOV     A,#0x8
+   \                     ??GuangApp_ProcessEvent_10:
+   \   000146   12....       LCALL   ?XSTACK_DISP0_8
+   \   000149   E4           CLR     A
+   \   00014A   F0           MOVX    @DPTR,A
+   \   00014B                ; Setup parameters for call to function LcdClearLine
+   \   00014B   7A08         MOV     R2,#0x8
+   \   00014D   7900         MOV     R1,#0x0
+   \   00014F   12....       LCALL   ??LcdClearLine?relay
+   \   000152                ; Setup parameters for call to function LCD_P8x16Str
+   \   000152   85..82       MOV     DPL,?XSP + 0
+   \   000155   85..83       MOV     DPH,?XSP + 1
+   \   000158   AC82         MOV     R4,DPL
+   \   00015A   AD83         MOV     R5,DPH
+   \   00015C   7A00         MOV     R2,#0x0
+   \   00015E   7900         MOV     R1,#0x0
+   \   000160   12....       LCALL   ??LCD_P8x16Str?relay
+   \   000163                ; Setup parameters for call to function LCD_P16x16Ch
+   \   000163   7B40         MOV     R3,#0x40
+   \   000165   7A02         MOV     R2,#0x2
+   \   000167   7910         MOV     R1,#0x10
+   \   000169   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   00016C                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00016C   7B50         MOV     R3,#0x50
+   \   00016E   7A02         MOV     R2,#0x2
+   \   000170   7920         MOV     R1,#0x20
+   \   000172   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   000175                ; Setup parameters for call to function LCD_P16x16Ch
+   \   000175   7B60         MOV     R3,#0x60
+   \   000177   7A02         MOV     R2,#0x2
+   \   000179   7960         MOV     R1,#0x60
+   \   00017B   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   00017E                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00017E   7B70         MOV     R3,#0x70
+   \   000180   7A02         MOV     R2,#0x2
+   \   000182   7970         MOV     R1,#0x70
+   \   000184   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   000187   7E00         MOV     R6,#0x0
+   \   000189   7F00         MOV     R7,#0x0
+   \   00018B   8007         SJMP    ??GuangApp_ProcessEvent_11
+   \                     ??GuangApp_ProcessEvent_3:
+   \   00018D   EE           MOV     A,R6
+   \   00018E   4F           ORL     A,R7
+   \   00018F   6003         JZ      $+5
+   \   000191   02....       LJMP    ??GuangApp_ProcessEvent_2 & 0xFFFF
+   \                     ??GuangApp_ProcessEvent_11:
+   \   000194                ; Setup parameters for call to function LCD_P16x16Ch
+   \   000194   7B00         MOV     R3,#0x0
+   \   000196   7A04         MOV     R2,#0x4
+   \   000198   7900         MOV     R1,#0x0
+   \   00019A   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   00019D                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00019D   7B30         MOV     R3,#0x30
+   \   00019F   7A06         MOV     R2,#0x6
+   \   0001A1   7900         MOV     R1,#0x0
+   \   0001A3   02....       LJMP    ??CrossCallReturnLabel_36 & 0xFFFF
+    339              }
+    340          
+    341              // return unprocessed events
+    342              return (events ^ SYS_EVENT_MSG);
+   \                     ??GuangApp_ProcessEvent_6:
+   \   0001A6   AA..         MOV     R2,?V0 + 0
+   \   0001A8   E5..         MOV     A,?V0 + 1
+   \   0001AA   6480         XRL     A,#0x80
+   \   0001AC   FB           MOV     R3,A
+   \   0001AD   8025         SJMP    ??GuangApp_ProcessEvent_12
+    343            }
+    344          
+    345            // Send a message out - This event is generated by a timer
+    346            //  (setup in GuangApp_Init()).
+    347            if ( events & GENERICAPP_SEND_MSG_EVT )
+   \                     ??GuangApp_ProcessEvent_0:
+   \   0001AF   EA           MOV     A,R2
+   \   0001B0   A2E0         MOV     C,0xE0 /* A   */.0
+   \   0001B2   501C         JNC     ??GuangApp_ProcessEvent_13
+    348            {
+    349              // Send "the" message
+    350              GuangApp_SendTheMessage();
+   \   0001B4                ; Setup parameters for call to function GuangApp_SendTheMessage
+   \   0001B4   12....       LCALL   ??GuangApp_SendTheMessage?relay
+    351          
+    352              // Setup to send message again
+    353              osal_start_timerEx( GuangApp_TaskID,
+    354                                  GENERICAPP_SEND_MSG_EVT,
+    355                                GENERICAPP_SEND_MSG_TIMEOUT );
+   \   0001B7                ; Setup parameters for call to function osal_start_timerEx
+   \   0001B7   7C48         MOV     R4,#0x48
+   \   0001B9   7D26         MOV     R5,#0x26
+   \   0001BB   7A01         MOV     R2,#0x1
+   \   0001BD   7B00         MOV     R3,#0x0
+   \   0001BF   90....       MOV     DPTR,#GuangApp_TaskID
+   \   0001C2   E0           MOVX    A,@DPTR
+   \   0001C3   F9           MOV     R1,A
+   \   0001C4   12....       LCALL   ??osal_start_timerEx?relay
+    356          
+    357              // return unprocessed events
+    358              return (events ^ GENERICAPP_SEND_MSG_EVT);
+   \   0001C7   E5..         MOV     A,?V0 + 0
+   \   0001C9   6401         XRL     A,#0x1
+   \   0001CB   FA           MOV     R2,A
+   \   0001CC   AB..         MOV     R3,?V0 + 1
+   \   0001CE   8004         SJMP    ??GuangApp_ProcessEvent_12
+    359            }
+    360          
+    361            // Discard unknown events
+    362            return 0;
+   \                     ??GuangApp_ProcessEvent_13:
+   \   0001D0   7A00         MOV     R2,#0x0
+   \   0001D2   7B00         MOV     R3,#0x0
+   \                     ??GuangApp_ProcessEvent_12:
+   \   0001D4   740C         MOV     A,#0xc
+   \   0001D6   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001D9   7F06         MOV     R7,#0x6
+   \   0001DB   02....       LJMP    ?BANKED_LEAVE_XDATA
+    363          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   000003   EE           MOV     A,R6
+   \   000004   2401         ADD     A,#0x1
+   \   000006   0E           INC     R6
+   \   000007   EF           MOV     A,R7
+   \   000008   3400         ADDC    A,#0x0
+   \   00000A   FF           MOV     R7,A
+   \   00000B   C3           CLR     C
+   \   00000C   EE           MOV     A,R6
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   EE           MOV     A,R6
+   \   000001   C4           SWAP    A
+   \   000002   54F0         ANL     A,#0xf0
+   \   000004   F5..         MOV     ?V0 + 4,A
+   \   000006                ; Setup parameters for call to function LCD_P16x16Ch
+   \   000006                ; Setup parameters for call to function LCD_P16x16Ch
+   \   000006   FB           MOV     R3,A
+   \   000007   7A04         MOV     R2,#0x4
+   \   000009   F9           MOV     R1,A
+   \   00000A   12....       LCALL   ??LCD_P16x16Ch?relay
+   \   00000D                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00000D                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00000D   AB..         MOV     R3,?V0 + 4
+   \   00000F   7A06         MOV     R2,#0x6
+   \   000011   A9..         MOV     R1,?V0 + 4
+   \   000013   22           RET
+    364          
+    365          /*********************************************************************
+    366           * Event Generation Functions
+    367           */
+    368          
+    369          /*********************************************************************
+    370           * @fn      GuangApp_ProcessZDOMsgs()
+    371           *
+    372           * @brief   Process response messages
+    373           *
+    374           * @param   none
+    375           *
+    376           * @return  none
+    377           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    378          void GuangApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+   \                     GuangApp_ProcessZDOMsgs:
+    379          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    380            switch ( inMsg->clusterID )
+   \   000005   EA           MOV     A,R2
+   \   000006   240C         ADD     A,#0xc
+   \   000008   F582         MOV     DPL,A
+   \   00000A   EB           MOV     A,R3
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F583         MOV     DPH,A
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   F5..         MOV     ?V0 + 0,A
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   F5..         MOV     ?V0 + 1,A
+   \   000016   78..         MOV     R0,#?V0 + 0
+   \   000018   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for GuangApp_ProcessZDOMsgs>_0`:
+   \   00001B   0000         DW        0
+   \   00001D   0200         DW        2
+   \   00001F   0680         DW        32774
+   \   000021   ....         DW        ??GuangApp_ProcessZDOMsgs_0
+   \   000023   2080         DW        32800
+   \   000025   ....         DW        ??GuangApp_ProcessZDOMsgs_1
+   \   000027   ....         DW        ??GuangApp_ProcessZDOMsgs_2
+    381            {
+    382              case End_Device_Bind_rsp:
+    383                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+   \                     ??GuangApp_ProcessZDOMsgs_1:
+   \   000029   EA           MOV     A,R2
+   \   00002A   2413         ADD     A,#0x13
+   \   00002C   F582         MOV     DPL,A
+   \   00002E   EB           MOV     A,R3
+   \   00002F   3400         ADDC    A,#0x0
+   \   000031   F583         MOV     DPH,A
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   F8           MOV     R0,A
+   \   000035   A3           INC     DPTR
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   F583         MOV     DPH,A
+   \   000039   8882         MOV     DPL,R0
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   7009         JNZ     ??GuangApp_ProcessZDOMsgs_3
+    384                {
+    385                  // Light LED
+    386                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   00003E                ; Setup parameters for call to function HalLedSet
+   \   00003E   7A01         MOV     R2,#0x1
+   \                     ??GuangApp_ProcessZDOMsgs_4:
+   \   000040   7908         MOV     R1,#0x8
+   \   000042   12....       LCALL   ??HalLedSet?relay
+   \   000045   804F         SJMP    ??GuangApp_ProcessZDOMsgs_2
+    387                }
+    388          #if defined(BLINK_LEDS)
+    389                else
+    390                {
+    391                  // Flash LED to show failure
+    392                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+   \                     ??GuangApp_ProcessZDOMsgs_3:
+   \   000047                ; Setup parameters for call to function HalLedSet
+   \   000047   7A04         MOV     R2,#0x4
+   \   000049   80F5         SJMP    ??GuangApp_ProcessZDOMsgs_4
+    393                }
+    394          #endif
+    395                break;
+    396          
+    397              case Match_Desc_rsp:
+    398                {
+    399                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+   \                     ??GuangApp_ProcessZDOMsgs_0:
+   \   00004B                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   00004B   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   00004E   8A..         MOV     ?V0 + 0,R2
+   \   000050   8B..         MOV     ?V0 + 1,R3
+   \   000052   AE..         MOV     R6,?V0 + 0
+   \   000054   AF..         MOV     R7,?V0 + 1
+    400                  if ( pRsp )
+   \   000056   EE           MOV     A,R6
+   \   000057   4F           ORL     A,R7
+   \   000058   603C         JZ      ??GuangApp_ProcessZDOMsgs_2
+    401                  {
+    402                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+   \   00005A   8E82         MOV     DPL,R6
+   \   00005C   8F83         MOV     DPH,R7
+   \   00005E   E0           MOVX    A,@DPTR
+   \   00005F   702E         JNZ     ??GuangApp_ProcessZDOMsgs_5
+   \   000061   A3           INC     DPTR
+   \   000062   A3           INC     DPTR
+   \   000063   A3           INC     DPTR
+   \   000064   E0           MOVX    A,@DPTR
+   \   000065   6028         JZ      ??GuangApp_ProcessZDOMsgs_5
+    403                    {
+    404                      GuangApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   000067   90....       MOV     DPTR,#GuangApp_DstAddr + 8
+   \   00006A   7402         MOV     A,#0x2
+   \   00006C   F0           MOVX    @DPTR,A
+    405                      GuangApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+   \   00006D   8E82         MOV     DPL,R6
+   \   00006F   8F83         MOV     DPH,R7
+   \   000071   A3           INC     DPTR
+   \   000072   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_40:
+   \   000075   90....       MOV     DPTR,#GuangApp_DstAddr
+   \   000078   12....       LCALL   ?Subroutine10 & 0xFFFF
+    406                      // Take the first endpoint, Can be changed to search through endpoints
+    407                      GuangApp_DstAddr.endPoint = pRsp->epList[0];
+   \                     ??CrossCallReturnLabel_47:
+   \   00007B   8E82         MOV     DPL,R6
+   \   00007D   8F83         MOV     DPH,R7
+   \   00007F   A3           INC     DPTR
+   \   000080   A3           INC     DPTR
+   \   000081   A3           INC     DPTR
+   \   000082   A3           INC     DPTR
+   \   000083   E0           MOVX    A,@DPTR
+   \   000084   90....       MOV     DPTR,#GuangApp_DstAddr + 9
+   \   000087   F0           MOVX    @DPTR,A
+    408          
+    409                      // Light LED
+    410                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   000088                ; Setup parameters for call to function HalLedSet
+   \   000088   7A01         MOV     R2,#0x1
+   \   00008A   7908         MOV     R1,#0x8
+   \   00008C   12....       LCALL   ??HalLedSet?relay
+    411                    }
+    412                    osal_mem_free( pRsp );
+   \                     ??GuangApp_ProcessZDOMsgs_5:
+   \   00008F                ; Setup parameters for call to function osal_mem_free
+   \   00008F   EE           MOV     A,R6
+   \   000090   FA           MOV     R2,A
+   \   000091   EF           MOV     A,R7
+   \   000092   FB           MOV     R3,A
+   \   000093   12....       LCALL   ??osal_mem_free?relay
+    413                  }
+    414                }
+    415                break;
+    416            }
+    417          }
+   \                     ??GuangApp_ProcessZDOMsgs_2:
+   \   000096                REQUIRE ?Subroutine0
+   \   000096                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   E8           MOV     A,R0
+   \   000001                REQUIRE ??Subroutine12_0
+   \   000001                ; // Fall through to label ??Subroutine12_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine12_0:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   E9           MOV     A,R1
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   22           RET
+    418          
+    419          /*********************************************************************
+    420           * @fn      GuangApp_HandleKeys
+    421           *
+    422           * @brief   Handles all key events for this device.
+    423           *
+    424           * @param   shift - true if in shift/alt.
+    425           * @param   keys - bit field for key events. Valid entries:
+    426           *                 HAL_KEY_SW_4
+    427           *                 HAL_KEY_SW_3
+    428           *                 HAL_KEY_SW_2
+    429           *                 HAL_KEY_SW_1
+    430           *
+    431           * @return  none
+    432           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    433          void GuangApp_HandleKeys( byte shift, byte keys )
+   \                     GuangApp_HandleKeys:
+    434          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    435            //zAddrType_t dstAddr;
+    436            
+    437            // Shift is used to make each button/switch dual purpose.
+    438            if ( shift )
+    439            {
+    440              if ( keys & HAL_KEY_SW_1 )
+    441              {
+    442              }
+    443              if ( keys & HAL_KEY_SW_2 )
+    444              {
+    445              }
+    446              if ( keys & HAL_KEY_SW_3 )
+    447              {
+    448              }
+    449              if ( keys & HAL_KEY_SW_4 )
+    450              {
+    451              }
+    452            }
+    453            else
+    454            {
+    455              if ( keys & HAL_KEY_SW_1 )
+    456              {
+    457              }
+    458          
+    459              if ( keys & HAL_KEY_SW_2 )
+    460              {
+    461          //      HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    462          //
+    463          //      // Initiate an End Device Bind Request for the mandatory endpoint
+    464          //      dstAddr.addrMode = Addr16Bit;
+    465          //      dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    466          //      ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(), 
+    467          //                            GuangApp_epDesc.endPoint,
+    468          //                            GENERICAPP_PROFID,
+    469          //                            GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    470          //                            GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    471          //                            FALSE );
+    472              }
+    473          
+    474              if ( keys & HAL_KEY_SW_3 )
+    475              {
+    476              }
+    477          
+    478              if ( keys & HAL_KEY_SW_4 )
+    479              {
+    480          //      HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    481          //      // Initiate a Match Description Request (Service Discovery)
+    482          //      dstAddr.addrMode = AddrBroadcast;
+    483          //      dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    484          //      ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    485          //                        GENERICAPP_PROFID,
+    486          //                        GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    487          //                        GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    488          //                        FALSE );
+    489              }
+    490            }
+    491          }
+   \   000000   02....       LJMP    ?BRET
+    492          
+    493          /*********************************************************************
+    494           * LOCAL FUNCTIONS
+    495           */
+    496          
+    497          /*********************************************************************
+    498           * @fn      GuangApp_MessageMSGCB
+    499           *
+    500           * @brief   Data message processor callback.  This function processes
+    501           *          any incoming data - probably from other devices.  So, based
+    502           *          on cluster ID, perform the intended action.
+    503           *
+    504           * @param   none
+    505           *
+    506           * @return  none
+    507           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    508          void GuangApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     GuangApp_MessageMSGCB:
+    509          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    510            switch ( pkt->clusterId )
+   \   000005   75....       MOV     ?V0 + 2,#`?<Constant "\\n">` & 0xff
+   \   000008   75....       MOV     ?V0 + 3,#(`?<Constant "\\n">` >> 8) & 0xff
+   \   00000B   EA           MOV     A,R2
+   \   00000C   2421         ADD     A,#0x21
+   \   00000E   FE           MOV     R6,A
+   \   00000F   EB           MOV     A,R3
+   \   000010   3400         ADDC    A,#0x0
+   \   000012   FF           MOV     R7,A
+   \   000013   EA           MOV     A,R2
+   \   000014   241F         ADD     A,#0x1f
+   \   000016   F5..         MOV     ?V0 + 0,A
+   \   000018   EB           MOV     A,R3
+   \   000019   3400         ADDC    A,#0x0
+   \   00001B   F5..         MOV     ?V0 + 1,A
+   \   00001D   75....       MOV     ?V0 + 4,#`?<Constant "Rx:">` & 0xff
+   \   000020   75....       MOV     ?V0 + 5,#(`?<Constant "Rx:">` >> 8) & 0xff
+   \   000023   8A82         MOV     DPL,R2
+   \   000025   8B83         MOV     DPH,R3
+   \   000027   A3           INC     DPTR
+   \   000028   A3           INC     DPTR
+   \   000029   A3           INC     DPTR
+   \   00002A   A3           INC     DPTR
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   F5..         MOV     ?V0 + 6,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F5..         MOV     ?V0 + 7,A
+   \   000032   78..         MOV     R0,#?V0 + 6
+   \   000034   12....       LCALL   ?US_SWITCH_DENSE
+   \                     `?<Jumptable for GuangApp_MessageMSGCB>_0`:
+   \   000037   0100         DW        1
+   \   000039   01           DB        1
+   \   00003A   ....         DW        ??GuangApp_MessageMSGCB_0
+   \   00003C   ....         DW        ??GuangApp_MessageMSGCB_1
+   \   00003E   ....         DW        ??GuangApp_MessageMSGCB_2
+    511            {
+    512              case GENERICAPP_CLUSTERID:
+    513                // "the" message
+    514              //------------添加打印--------------
+    515                HalUARTWrite(0, "Rx:", 3); //提示信息 
+   \                     ??GuangApp_MessageMSGCB_1:
+   \   000040                ; Setup parameters for call to function HalUARTWrite
+   \   000040   12....       LCALL   ?Subroutine5 & 0xFFFF
+    516                HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据 
+    517                HalUARTWrite(0, "\n", 1); //回车换行 
+    518               //------------------------------------
+    519          //#if defined( LCD_SUPPORTED )
+    520          //      HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+    521          //#elif defined( WIN32 )
+    522          //      WPRINTSTR( pkt->cmd.Data );
+    523          //#endif
+    524                break;
+   \                     ??CrossCallReturnLabel_19:
+   \   000043   02....       LJMP    ??GuangApp_MessageMSGCB_0 & 0xFFFF
+    525                
+    526                case GENERICAPP_BROADCASTID:   //广播收到信息
+    527                
+    528                HalUARTWrite(0, "Rx:", 3); //提示信息 
+   \                     ??GuangApp_MessageMSGCB_2:
+   \   000046                ; Setup parameters for call to function HalUARTWrite
+   \   000046   12....       LCALL   ?Subroutine5 & 0xFFFF
+    529                HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据 
+    530                HalUARTWrite(0, "\n", 1); //回车换行 
+    531                
+    532                
+    533                if(pkt->cmd.DataLength == 4)//是否符合数据帧
+   \                     ??CrossCallReturnLabel_20:
+   \   000049   85..82       MOV     DPL,?V0 + 0
+   \   00004C   85..83       MOV     DPH,?V0 + 1
+   \   00004F   E0           MOVX    A,@DPTR
+   \   000050   6404         XRL     A,#0x4
+   \   000052   7002         JNZ     ??GuangApp_MessageMSGCB_3
+   \   000054   A3           INC     DPTR
+   \   000055   E0           MOVX    A,@DPTR
+   \                     ??GuangApp_MessageMSGCB_3:
+   \   000056   6003         JZ      $+5
+   \   000058   02....       LJMP    ??GuangApp_MessageMSGCB_0 & 0xFFFF
+    534                {
+    535                    if((pkt->cmd.Data)[1] == '0')
+   \   00005B   8E82         MOV     DPL,R6
+   \   00005D   8F83         MOV     DPH,R7
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   2401         ADD     A,#0x1
+   \   000062   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   000065   700B         JNZ     ??GuangApp_MessageMSGCB_4
+    536                    {
+    537                      Light_Work_State = 0;
+   \   000067   90....       MOV     DPTR,#Light_Work_State
+   \   00006A   E4           CLR     A
+   \   00006B   F0           MOVX    @DPTR,A
+    538                      MYLED = LIGHT_PIN;
+   \   00006C   A296         MOV     C,0x90.6
+   \   00006E   9291         MOV     0x90.1,C
+   \   000070   801C         SJMP    ??GuangApp_MessageMSGCB_5
+    539                    }else if((pkt->cmd.Data)[1] == '1')  //开
+   \                     ??GuangApp_MessageMSGCB_4:
+   \   000072   E0           MOVX    A,@DPTR
+   \   000073   6431         XRL     A,#0x31
+   \   000075   700A         JNZ     ??GuangApp_MessageMSGCB_6
+    540                    {
+    541                      Light_Work_State = 1;
+   \   000077   90....       MOV     DPTR,#Light_Work_State
+   \   00007A   7401         MOV     A,#0x1
+   \   00007C   F0           MOVX    @DPTR,A
+    542                      MYLED =1;
+   \   00007D   D291         SETB    0x90.1
+   \   00007F   800D         SJMP    ??GuangApp_MessageMSGCB_5
+    543                    }else if((pkt->cmd.Data)[1] == '2'){  //关
+   \                     ??GuangApp_MessageMSGCB_6:
+   \   000081   E0           MOVX    A,@DPTR
+   \   000082   6432         XRL     A,#0x32
+   \   000084   7008         JNZ     ??GuangApp_MessageMSGCB_5
+    544                      Light_Work_State = 2;
+   \   000086   90....       MOV     DPTR,#Light_Work_State
+   \   000089   7402         MOV     A,#0x2
+   \   00008B   F0           MOVX    @DPTR,A
+    545                      MYLED =0;
+   \   00008C   C291         CLR     0x90.1
+    546                    }
+    547                    
+    548                    if((pkt->cmd.Data)[2] == '0')
+   \                     ??GuangApp_MessageMSGCB_5:
+   \   00008E   8E82         MOV     DPL,R6
+   \   000090   8F83         MOV     DPH,R7
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   2402         ADD     A,#0x2
+   \   000095   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_34:
+   \   000098   7011         JNZ     ??GuangApp_MessageMSGCB_7
+    549                    {
+    550                      Feng_Work_State = 0;
+   \   00009A   90....       MOV     DPTR,#Feng_Work_State
+   \   00009D   E4           CLR     A
+   \   00009E   F0           MOVX    @DPTR,A
+    551                      FENG = !MQ_PIN;
+   \   00009F   D2F0         SETB    B.0
+   \   0000A1   A286         MOV     C,0x80.6
+   \   0000A3   30F001       JNB     B.0,??GuangApp_MessageMSGCB_8
+   \   0000A6   B3           CPL     C
+   \                     ??GuangApp_MessageMSGCB_8:
+   \   0000A7   9294         MOV     0x90.4,C
+   \   0000A9   801C         SJMP    ??GuangApp_MessageMSGCB_9
+    552                    }else if((pkt->cmd.Data)[2] == '1')  //开
+   \                     ??GuangApp_MessageMSGCB_7:
+   \   0000AB   E0           MOVX    A,@DPTR
+   \   0000AC   6431         XRL     A,#0x31
+   \   0000AE   700A         JNZ     ??GuangApp_MessageMSGCB_10
+    553                    {
+    554                      Feng_Work_State = 1;
+   \   0000B0   90....       MOV     DPTR,#Feng_Work_State
+   \   0000B3   7401         MOV     A,#0x1
+   \   0000B5   F0           MOVX    @DPTR,A
+    555                      FENG =1;
+   \   0000B6   D294         SETB    0x90.4
+   \   0000B8   800D         SJMP    ??GuangApp_MessageMSGCB_9
+    556                    }else if((pkt->cmd.Data)[2] == '2'){  //关
+   \                     ??GuangApp_MessageMSGCB_10:
+   \   0000BA   E0           MOVX    A,@DPTR
+   \   0000BB   6432         XRL     A,#0x32
+   \   0000BD   7008         JNZ     ??GuangApp_MessageMSGCB_9
+    557                      Feng_Work_State = 2;
+   \   0000BF   90....       MOV     DPTR,#Feng_Work_State
+   \   0000C2   7402         MOV     A,#0x2
+   \   0000C4   F0           MOVX    @DPTR,A
+    558                      FENG =0;
+   \   0000C5   C294         CLR     0x90.4
+    559                    }
+    560                    
+    561                    if((pkt->cmd.Data)[3] == '0')
+   \                     ??GuangApp_MessageMSGCB_9:
+   \   0000C7   8E82         MOV     DPL,R6
+   \   0000C9   8F83         MOV     DPH,R7
+   \   0000CB   E0           MOVX    A,@DPTR
+   \   0000CC   2403         ADD     A,#0x3
+   \   0000CE   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   0000D1   7011         JNZ     ??GuangApp_MessageMSGCB_11
+    562                    {
+    563                      Fans_Work_State = 0;
+   \   0000D3   90....       MOV     DPTR,#Fans_Work_State
+   \   0000D6   E4           CLR     A
+   \   0000D7   F0           MOVX    @DPTR,A
+    564                      FANS = !MQ_PIN;
+   \   0000D8   D2F0         SETB    B.0
+   \   0000DA   A286         MOV     C,0x80.6
+   \   0000DC   30F001       JNB     B.0,??GuangApp_MessageMSGCB_12
+   \   0000DF   B3           CPL     C
+   \                     ??GuangApp_MessageMSGCB_12:
+   \   0000E0   9295         MOV     0x90.5,C
+   \   0000E2   801C         SJMP    ??GuangApp_MessageMSGCB_0
+    565                    }else if((pkt->cmd.Data)[3] == '1')  //开
+   \                     ??GuangApp_MessageMSGCB_11:
+   \   0000E4   E0           MOVX    A,@DPTR
+   \   0000E5   6431         XRL     A,#0x31
+   \   0000E7   700A         JNZ     ??GuangApp_MessageMSGCB_13
+    566                    {
+    567                      Fans_Work_State = 1;
+   \   0000E9   90....       MOV     DPTR,#Fans_Work_State
+   \   0000EC   7401         MOV     A,#0x1
+   \   0000EE   F0           MOVX    @DPTR,A
+    568                      FANS =1;
+   \   0000EF   D295         SETB    0x90.5
+   \   0000F1   800D         SJMP    ??GuangApp_MessageMSGCB_0
+    569                    }else if((pkt->cmd.Data)[3] == '2'){  //关
+   \                     ??GuangApp_MessageMSGCB_13:
+   \   0000F3   E0           MOVX    A,@DPTR
+   \   0000F4   6432         XRL     A,#0x32
+   \   0000F6   7008         JNZ     ??GuangApp_MessageMSGCB_0
+    570                      Fans_Work_State = 2;
+   \   0000F8   90....       MOV     DPTR,#Fans_Work_State
+   \   0000FB   7402         MOV     A,#0x2
+   \   0000FD   F0           MOVX    @DPTR,A
+    571                      FANS =0;
+   \   0000FE   C295         CLR     0x90.5
+    572                    }
+    573                }
+    574                
+    575                break;  
+    576            }
+    577          }
+   \                     ??GuangApp_MessageMSGCB_0:
+   \   000100   7F08         MOV     R7,#0x8
+   \   000102   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000105                REQUIRE _A_P1
+   \   000105                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   F8           MOV     R0,A
+   \   000001   A3           INC     DPTR
+   \   000002   E0           MOVX    A,@DPTR
+   \   000003   3400         ADDC    A,#0x0
+   \   000005   F9           MOV     R1,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   8983         MOV     DPH,R1
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   6430         XRL     A,#0x30
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   7C03         MOV     R4,#0x3
+   \   000002   7D00         MOV     R5,#0x0
+   \   000004   AA..         MOV     R2,?V0 + 4
+   \   000006   AB..         MOV     R3,?V0 + 5
+   \   000008   7900         MOV     R1,#0x0
+   \   00000A   12....       LCALL   ??HalUARTWrite?relay
+   \   00000D                ; Setup parameters for call to function HalUARTWrite
+   \   00000D                ; Setup parameters for call to function HalUARTWrite
+   \   00000D   85..82       MOV     DPL,?V0 + 0
+   \   000010   85..83       MOV     DPH,?V0 + 1
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   FC           MOV     R4,A
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   FD           MOV     R5,A
+   \   000018   8E82         MOV     DPL,R6
+   \   00001A   8F83         MOV     DPH,R7
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   FA           MOV     R2,A
+   \   00001E   A3           INC     DPTR
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   FB           MOV     R3,A
+   \   000021   7900         MOV     R1,#0x0
+   \   000023   12....       LCALL   ??HalUARTWrite?relay
+   \   000026                ; Setup parameters for call to function HalUARTWrite
+   \   000026                ; Setup parameters for call to function HalUARTWrite
+   \   000026   7C01         MOV     R4,#0x1
+   \   000028   7D00         MOV     R5,#0x0
+   \   00002A   AA..         MOV     R2,?V0 + 2
+   \   00002C   AB..         MOV     R3,?V0 + 3
+   \   00002E   7900         MOV     R1,#0x0
+   \   000030   12....       LCALL   ??HalUARTWrite?relay
+   \   000033   22           RET
+    578          
+    579          /*********************************************************************
+    580           * @fn      GuangApp_SendTheMessage
+    581           *
+    582           * @brief   Send "the" message.
+    583           *
+    584           * @param   none
+    585           *
+    586           * @return  none
+    587           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    588          void GuangApp_SendTheMessage( void )
+   \                     GuangApp_SendTheMessage:
+    589          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 19
+   \   000005   74ED         MOV     A,#-0x13
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    590            static uint8 send = 0;
+    591            byte temp[3], humidity[3], light_mq[4],strTemp[9]; 
+    592            if(send ==0)
+   \   00000A   90....       MOV     DPTR,#??send
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   7015         JNZ     ??GuangApp_SendTheMessage_0
+    593            {
+    594                HalUARTWrite(1, THCAsk, 8);
+   \   000010                ; Setup parameters for call to function HalUARTWrite
+   \   000010   7C08         MOV     R4,#0x8
+   \   000012   7D00         MOV     R5,#0x0
+   \   000014   7A..         MOV     R2,#THCAsk & 0xff
+   \   000016   7B..         MOV     R3,#(THCAsk >> 8) & 0xff
+   \   000018   7901         MOV     R1,#0x1
+   \   00001A   12....       LCALL   ??HalUARTWrite?relay
+    595                send = 1;
+   \   00001D   90....       MOV     DPTR,#??send
+   \   000020   7401         MOV     A,#0x1
+   \   000022   02....       LJMP    ??GuangApp_SendTheMessage_1 & 0xFFFF
+    596            }else{
+    597                  DHT11(); //获取温湿度 
+   \                     ??GuangApp_SendTheMessage_0:
+   \   000025                ; Setup parameters for call to function DHT11
+   \   000025   12....       LCALL   ??DHT11?relay
+    598            
+    599                  //光敏传感器和可燃气体传感器处理
+    600                  if(MQ_PIN == 0)         //当浓度高于设定值时 ，执行条件函数        
+   \   000028   A286         MOV     C,0x80.6
+   \   00002A   90....       MOV     DPTR,#Feng_Work_State
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   4011         JC      ??GuangApp_SendTheMessage_2
+    601                  {
+    602                    if(Feng_Work_State == 0) FENG = 1;          //开蜂鸣器
+   \   000030   7002         JNZ     ??GuangApp_SendTheMessage_3
+   \   000032   D294         SETB    0x90.4
+    603                    //if(Fans_Work_State == 0) FANS = 1;          //开风扇
+    604                    light_mq[0] = 0x31;
+   \                     ??GuangApp_SendTheMessage_3:
+   \   000034   85..82       MOV     DPL,?XSP + 0
+   \   000037   85..83       MOV     DPH,?XSP + 1
+   \   00003A   7431         MOV     A,#0x31
+   \   00003C   F0           MOVX    @DPTR,A
+    605                    LCD_P16x16Ch(80,2,8*16);
+   \   00003D                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00003D   7B80         MOV     R3,#-0x80
+   \   00003F   800F         SJMP    ??GuangApp_SendTheMessage_4
+    606                  }else
+    607                  {
+    608                    if(Feng_Work_State == 0) FENG = 0;         //关蜂鸣器
+   \                     ??GuangApp_SendTheMessage_2:
+   \   000041   7002         JNZ     ??GuangApp_SendTheMessage_5
+   \   000043   C294         CLR     0x90.4
+    609                    //if(Fans_Work_State == 0) FANS = 0;          //关风扇
+    610                    light_mq[0] = 0x30;
+   \                     ??GuangApp_SendTheMessage_5:
+   \   000045   85..82       MOV     DPL,?XSP + 0
+   \   000048   85..83       MOV     DPH,?XSP + 1
+   \   00004B   7430         MOV     A,#0x30
+   \   00004D   F0           MOVX    @DPTR,A
+    611                    LCD_P16x16Ch(80,2,9*16);
+   \   00004E                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00004E   7B90         MOV     R3,#-0x70
+   \                     ??GuangApp_SendTheMessage_4:
+   \   000050   7A02         MOV     R2,#0x2
+   \   000052   7950         MOV     R1,#0x50
+   \   000054   12....       LCALL   ??LCD_P16x16Ch?relay
+    612                  }
+    613                  
+    614                  if(LIGHT_PIN == 1)    //当光敏电阻处于黑暗中时，LED亮
+   \   000057   A296         MOV     C,0x90.6
+   \   000059   90....       MOV     DPTR,#Light_Work_State
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   5010         JNC     ??GuangApp_SendTheMessage_6
+    615                  {
+    616                      if(Light_Work_State == 0) MYLED =1;
+   \   00005F   7002         JNZ     ??GuangApp_SendTheMessage_7
+   \   000061   D291         SETB    0x90.1
+    617                      light_mq[1] = 0x31;
+   \                     ??GuangApp_SendTheMessage_7:
+   \   000063   7401         MOV     A,#0x1
+   \   000065   12....       LCALL   ?XSTACK_DISP0_8
+   \   000068   7431         MOV     A,#0x31
+   \   00006A   F0           MOVX    @DPTR,A
+    618                      LCD_P16x16Ch(0,2,9*16);   //屏幕打印无
+   \   00006B                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00006B   7B90         MOV     R3,#-0x70
+   \   00006D   800E         SJMP    ??GuangApp_SendTheMessage_8
+    619                  }
+    620                  else
+    621                  {
+    622                      if(Light_Work_State == 0) MYLED = 0;       //检测到光线时，低电平LED关闭
+   \                     ??GuangApp_SendTheMessage_6:
+   \   00006F   7002         JNZ     ??GuangApp_SendTheMessage_9
+   \   000071   C291         CLR     0x90.1
+    623                      light_mq[1] = 0x30;
+   \                     ??GuangApp_SendTheMessage_9:
+   \   000073   7401         MOV     A,#0x1
+   \   000075   12....       LCALL   ?XSTACK_DISP0_8
+   \   000078   7430         MOV     A,#0x30
+   \   00007A   F0           MOVX    @DPTR,A
+    624                       LCD_P16x16Ch(0,2,8*16);   //屏幕打印有
+   \   00007B                ; Setup parameters for call to function LCD_P16x16Ch
+   \   00007B   7B80         MOV     R3,#-0x80
+   \                     ??GuangApp_SendTheMessage_8:
+   \   00007D   7A02         MOV     R2,#0x2
+   \   00007F   7900         MOV     R1,#0x0
+   \   000081   12....       LCALL   ??LCD_P16x16Ch?relay
+    625                  }
+    626                light_mq[2] = 'e'; 
+   \   000084   7402         MOV     A,#0x2
+   \   000086   12....       LCALL   ?XSTACK_DISP0_8
+   \   000089   7465         MOV     A,#0x65
+   \   00008B   F0           MOVX    @DPTR,A
+    627                light_mq[3] = '\0'; 
+   \   00008C   7403         MOV     A,#0x3
+   \   00008E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000091   E4           CLR     A
+   \   000092   F0           MOVX    @DPTR,A
+    628                //ds18b20处理
+    629               
+    630                //风扇开关
+    631                if(Fans_Work_State == 0)
+   \   000093   90....       MOV     DPTR,#Fans_Work_State
+   \   000096   E0           MOVX    A,@DPTR
+   \   000097   7021         JNZ     ??GuangApp_SendTheMessage_10
+    632                {
+    633                  if( MQ_PIN == 1 && (wendu_shi<2  || (wendu_shi==2 && wendu_ge <= 6)) )
+   \   000099   A286         MOV     C,0x80.6
+   \   00009B   501B         JNC     ??GuangApp_SendTheMessage_11
+   \   00009D   90....       MOV     DPTR,#wendu_shi
+   \   0000A0   E0           MOVX    A,@DPTR
+   \   0000A1   C3           CLR     C
+   \   0000A2   9402         SUBB    A,#0x2
+   \   0000A4   400E         JC      ??GuangApp_SendTheMessage_12
+   \   0000A6   E0           MOVX    A,@DPTR
+   \   0000A7   6402         XRL     A,#0x2
+   \   0000A9   700D         JNZ     ??GuangApp_SendTheMessage_11
+   \   0000AB   90....       MOV     DPTR,#wendu_ge
+   \   0000AE   E0           MOVX    A,@DPTR
+   \   0000AF   C3           CLR     C
+   \   0000B0   9407         SUBB    A,#0x7
+   \   0000B2   5004         JNC     ??GuangApp_SendTheMessage_11
+    634                  {
+    635                    FANS = 0;
+   \                     ??GuangApp_SendTheMessage_12:
+   \   0000B4   C295         CLR     0x90.5
+   \   0000B6   8002         SJMP    ??GuangApp_SendTheMessage_10
+    636                  }else{
+    637                    FANS = 1;
+   \                     ??GuangApp_SendTheMessage_11:
+   \   0000B8   D295         SETB    0x90.5
+    638                  }
+    639                }
+    640                  
+    641                //将温湿度的转换成字符串,供 LCD 显示 
+    642                temp[0] = wendu_shi+0x30; 
+   \                     ??GuangApp_SendTheMessage_10:
+   \   0000BA   90....       MOV     DPTR,#wendu_shi
+   \   0000BD   E0           MOVX    A,@DPTR
+   \   0000BE   2430         ADD     A,#0x30
+   \   0000C0   C0E0         PUSH    A
+   \   0000C2   7407         MOV     A,#0x7
+   \   0000C4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C7   D0E0         POP     A
+   \   0000C9   F0           MOVX    @DPTR,A
+    643                temp[1] = wendu_ge+0x30; 
+   \   0000CA   90....       MOV     DPTR,#wendu_ge
+   \   0000CD   E0           MOVX    A,@DPTR
+   \   0000CE   2430         ADD     A,#0x30
+   \   0000D0   C0E0         PUSH    A
+   \   0000D2   7408         MOV     A,#0x8
+   \   0000D4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D7   D0E0         POP     A
+   \   0000D9   F0           MOVX    @DPTR,A
+    644                temp[2] = '\0'; 
+   \   0000DA   7409         MOV     A,#0x9
+   \   0000DC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DF   E4           CLR     A
+   \   0000E0   F0           MOVX    @DPTR,A
+    645                humidity[0] = shidu_shi+0x30; 
+   \   0000E1   90....       MOV     DPTR,#shidu_shi
+   \   0000E4   E0           MOVX    A,@DPTR
+   \   0000E5   2430         ADD     A,#0x30
+   \   0000E7   C0E0         PUSH    A
+   \   0000E9   7404         MOV     A,#0x4
+   \   0000EB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000EE   D0E0         POP     A
+   \   0000F0   F0           MOVX    @DPTR,A
+    646                humidity[1] = shidu_ge+0x30; 
+   \   0000F1   90....       MOV     DPTR,#shidu_ge
+   \   0000F4   E0           MOVX    A,@DPTR
+   \   0000F5   2430         ADD     A,#0x30
+   \   0000F7   C0E0         PUSH    A
+   \   0000F9   7405         MOV     A,#0x5
+   \   0000FB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FE   D0E0         POP     A
+   \   000100   F0           MOVX    @DPTR,A
+    647                humidity[2] = '\0';
+   \   000101   7406         MOV     A,#0x6
+   \   000103   12....       LCALL   ?XSTACK_DISP0_8
+   \   000106   E4           CLR     A
+   \   000107   F0           MOVX    @DPTR,A
+    648                //将数据整合后方便发给协调器显示 
+    649              
+    650                strTemp[0] = ZIGBEE_ID; 
+   \   000108   740A         MOV     A,#0xa
+   \   00010A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00010D   7431         MOV     A,#0x31
+   \   00010F   F0           MOVX    @DPTR,A
+    651                osal_memcpy(&strTemp[1], temp, 2); 
+   \   000110                ; Setup parameters for call to function osal_memcpy
+   \   000110   7407         MOV     A,#0x7
+   \   000112   12....       LCALL   ?XSTACK_DISP0_8
+   \   000115   A982         MOV     R1,DPL
+   \   000117   AA83         MOV     R2,DPH
+   \   000119   89..         MOV     ?V0 + 0,R1
+   \   00011B   8A..         MOV     ?V0 + 1,R2
+   \   00011D   75..00       MOV     ?V0 + 2,#0x0
+   \   000120   78..         MOV     R0,#?V0 + 0
+   \   000122   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000125   7C02         MOV     R4,#0x2
+   \   000127   7D00         MOV     R5,#0x0
+   \   000129   740E         MOV     A,#0xe
+   \   00012B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012E   AA82         MOV     R2,DPL
+   \   000130   AB83         MOV     R3,DPH
+   \   000132   12....       LCALL   ??osal_memcpy?relay
+   \   000135   7403         MOV     A,#0x3
+   \   000137   12....       LCALL   ?DEALLOC_XSTACK8
+    652                osal_memcpy(&strTemp[3], humidity, 2); 
+   \   00013A                ; Setup parameters for call to function osal_memcpy
+   \   00013A   7404         MOV     A,#0x4
+   \   00013C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013F   A982         MOV     R1,DPL
+   \   000141   AA83         MOV     R2,DPH
+   \   000143   89..         MOV     ?V0 + 0,R1
+   \   000145   8A..         MOV     ?V0 + 1,R2
+   \   000147   78..         MOV     R0,#?V0 + 0
+   \   000149   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00014C   7C02         MOV     R4,#0x2
+   \   00014E   7D00         MOV     R5,#0x0
+   \   000150   7410         MOV     A,#0x10
+   \   000152   12....       LCALL   ?XSTACK_DISP0_8
+   \   000155   AA82         MOV     R2,DPL
+   \   000157   AB83         MOV     R3,DPH
+   \   000159   12....       LCALL   ??osal_memcpy?relay
+   \   00015C   7403         MOV     A,#0x3
+   \   00015E   12....       LCALL   ?DEALLOC_XSTACK8
+    653                osal_memcpy(&strTemp[5], light_mq, 4); 
+   \   000161                ; Setup parameters for call to function osal_memcpy
+   \   000161   85..82       MOV     DPL,?XSP + 0
+   \   000164   85..83       MOV     DPH,?XSP + 1
+   \   000167   A982         MOV     R1,DPL
+   \   000169   AA83         MOV     R2,DPH
+   \   00016B   89..         MOV     ?V0 + 0,R1
+   \   00016D   8A..         MOV     ?V0 + 1,R2
+   \   00016F   78..         MOV     R0,#?V0 + 0
+   \   000171   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000174   7C04         MOV     R4,#0x4
+   \   000176   7D00         MOV     R5,#0x0
+   \   000178   7412         MOV     A,#0x12
+   \   00017A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00017D   AA82         MOV     R2,DPL
+   \   00017F   AB83         MOV     R3,DPH
+   \   000181   12....       LCALL   ??osal_memcpy?relay
+   \   000184   7403         MOV     A,#0x3
+   \   000186   12....       LCALL   ?DEALLOC_XSTACK8
+    654                //获得的温湿度通过串口输出到电脑显示 
+    655                HalUARTWrite(0, "T&H:", 4); 
+   \   000189                ; Setup parameters for call to function HalUARTWrite
+   \   000189   7C04         MOV     R4,#0x4
+   \   00018B   7D00         MOV     R5,#0x0
+   \   00018D   7A..         MOV     R2,#`?<Constant "T&H:">` & 0xff
+   \   00018F   7B..         MOV     R3,#(`?<Constant "T&H:">` >> 8) & 0xff
+   \   000191   7900         MOV     R1,#0x0
+   \   000193   12....       LCALL   ??HalUARTWrite?relay
+    656                HalUARTWrite(0, strTemp, 7); 
+   \   000196                ; Setup parameters for call to function HalUARTWrite
+   \   000196   7C07         MOV     R4,#0x7
+   \   000198   7D00         MOV     R5,#0x0
+   \   00019A   740A         MOV     A,#0xa
+   \   00019C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00019F   AA82         MOV     R2,DPL
+   \   0001A1   AB83         MOV     R3,DPH
+   \   0001A3   7900         MOV     R1,#0x0
+   \   0001A5   12....       LCALL   ??HalUARTWrite?relay
+    657                HalUARTWrite(0, "\n",1); 
+   \   0001A8                ; Setup parameters for call to function HalUARTWrite
+   \   0001A8   7C01         MOV     R4,#0x1
+   \   0001AA   7D00         MOV     R5,#0x0
+   \   0001AC   7A..         MOV     R2,#`?<Constant "\\n">` & 0xff
+   \   0001AE   7B..         MOV     R3,#(`?<Constant "\\n">` >> 8) & 0xff
+   \   0001B0   7900         MOV     R1,#0x0
+   \   0001B2   12....       LCALL   ??HalUARTWrite?relay
+    658                
+    659                //输出到 LCD 显示 
+    660              
+    661                LCD_P8x16Str(48, 4, temp); //LCD 显示温度值 
+   \   0001B5                ; Setup parameters for call to function LCD_P8x16Str
+   \   0001B5   7407         MOV     A,#0x7
+   \   0001B7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001BA   AC82         MOV     R4,DPL
+   \   0001BC   AD83         MOV     R5,DPH
+   \   0001BE   7A04         MOV     R2,#0x4
+   \   0001C0   7930         MOV     R1,#0x30
+   \   0001C2   12....       LCALL   ??LCD_P8x16Str?relay
+    662                LCD_P8x16Str(48, 6, humidity); //LCD 显示湿度值
+   \   0001C5                ; Setup parameters for call to function LCD_P8x16Str
+   \   0001C5   7404         MOV     A,#0x4
+   \   0001C7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001CA   AC82         MOV     R4,DPL
+   \   0001CC   AD83         MOV     R5,DPH
+   \   0001CE   7A06         MOV     R2,#0x6
+   \   0001D0   7930         MOV     R1,#0x30
+   \   0001D2   12....       LCALL   ??LCD_P8x16Str?relay
+    663                
+    664              
+    665                
+    666                //发送给协调器
+    667                if ( AF_DataRequest( &GuangApp_DstAddr, &GuangApp_epDesc,
+    668                                     GENERICAPP_CLUSTERID,
+    669                                     9,
+    670                                     strTemp,
+    671                                     &GuangApp_TransID,
+    672                                     AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   0001D5                ; Setup parameters for call to function AF_DataRequest
+   \   0001D5   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0001D8   78..         MOV     R0,#?V0 + 0
+   \   0001DA   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001DD   75....       MOV     ?V0 + 0,#GuangApp_TransID & 0xff
+   \   0001E0   75....       MOV     ?V0 + 1,#(GuangApp_TransID >> 8) & 0xff
+   \   0001E3   78..         MOV     R0,#?V0 + 0
+   \   0001E5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001E8   740D         MOV     A,#0xd
+   \   0001EA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001ED   8582..       MOV     ?V0 + 0,DPL
+   \   0001F0   8583..       MOV     ?V0 + 1,DPH
+   \   0001F3   78..         MOV     R0,#?V0 + 0
+   \   0001F5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001F8   75..09       MOV     ?V0 + 0,#0x9
+   \   0001FB   75..00       MOV     ?V0 + 1,#0x0
+   \   0001FE   78..         MOV     R0,#?V0 + 0
+   \   000200   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000203   75..01       MOV     ?V0 + 0,#0x1
+   \   000206   78..         MOV     R0,#?V0 + 0
+   \   000208   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00020B   7920         MOV     R1,#0x20
+   \   00020D   7C..         MOV     R4,#GuangApp_epDesc & 0xff
+   \   00020F   7D..         MOV     R5,#(GuangApp_epDesc >> 8) & 0xff
+   \   000211   7A..         MOV     R2,#GuangApp_DstAddr & 0xff
+   \   000213   7B..         MOV     R3,#(GuangApp_DstAddr >> 8) & 0xff
+   \   000215   12....       LCALL   ??AF_DataRequest?relay
+   \   000218   7409         MOV     A,#0x9
+   \   00021A   12....       LCALL   ?DEALLOC_XSTACK8
+    673                {
+    674                  // Successfully requested to be sent.
+    675                }
+    676                else
+    677                {
+    678                  // Error occurred in request to send.
+    679                }
+    680                send = 0;
+   \   00021D   90....       MOV     DPTR,#??send
+   \   000220   E4           CLR     A
+   \                     ??GuangApp_SendTheMessage_1:
+   \   000221   F0           MOVX    @DPTR,A
+    681            }
+    682          }
+   \   000222   7413         MOV     A,#0x13
+   \   000224   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000227   7F03         MOV     R7,#0x3
+   \   000229   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00022C                REQUIRE _A_P0
+   \   00022C                REQUIRE _A_P1
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??send:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    683          
+    684          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    685          extern void rxCB(uint8 port,uint8 event)
+   \                     rxCB:
+    686          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    687          
+    688            if (GuangApp_TxLen < GUANG_APP_TX_MAX)
+   \   000007   90....       MOV     DPTR,#GuangApp_TxLen
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   C3           CLR     C
+   \   00000C   9419         SUBB    A,#0x19
+   \   00000E   4003         JC      $+5
+   \   000010   02....       LJMP    ??rxCB_0 & 0xFFFF
+    689                  {
+    690                      GuangApp_TxLen = HalUARTRead(port, GuangApp_TxBuf, GUANG_APP_TX_MAX);
+   \   000013                ; Setup parameters for call to function HalUARTRead
+   \   000013   7C19         MOV     R4,#0x19
+   \   000015   7D00         MOV     R5,#0x0
+   \   000017   7A..         MOV     R2,#GuangApp_TxBuf & 0xff
+   \   000019   7B..         MOV     R3,#(GuangApp_TxBuf >> 8) & 0xff
+   \   00001B   12....       LCALL   ??HalUARTRead?relay
+   \   00001E   EA           MOV     A,R2
+   \   00001F   90....       MOV     DPTR,#GuangApp_TxLen
+   \   000022   F0           MOVX    @DPTR,A
+    691                      if (GuangApp_TxLen)
+   \   000023   7003         JNZ     $+5
+   \   000025   02....       LJMP    ??rxCB_1 & 0xFFFF
+    692                      {
+    693                      //双串口互错传输
+    694                      //串口0发---> 串口1收
+    695                      //串口1发---> 串口0收
+    696          
+    697                          if(port==1)
+   \   000028   7401         MOV     A,#0x1
+   \   00002A   6E           XRL     A,R6
+   \   00002B   6003         JZ      $+5
+   \   00002D   02....       LJMP    ??rxCB_2 & 0xFFFF
+    698                          {
+    699                              //HalUARTWrite(0, GuangApp_TxBuf, GuangApp_TxLen);
+    700                            if(GuangApp_TxBuf[0] == 0x01){//isCRC(GuangApp_TxBuf,20) == 't' && GuangApp_TxBuf[0] == 0x01){
+   \   000030   90....       MOV     DPTR,#GuangApp_TxBuf
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   6401         XRL     A,#0x1
+   \   000036   6003         JZ      $+5
+   \   000038   02....       LJMP    ??rxCB_3 & 0xFFFF
+    701                              HalLedSet(HAL_LED_4,HAL_LED_MODE_TOGGLE);
+   \   00003B                ; Setup parameters for call to function HalLedSet
+   \   00003B   7A08         MOV     R2,#0x8
+   \   00003D   7908         MOV     R1,#0x8
+   \   00003F   12....       LCALL   ??HalLedSet?relay
+    702                               THCnum = 0;
+   \   000042   90....       MOV     DPTR,#THCnum
+   \   000045   E4           CLR     A
+   \   000046   F0           MOVX    @DPTR,A
+   \   000047   A3           INC     DPTR
+   \   000048   F0           MOVX    @DPTR,A
+    703                               memset(THCstr,0,15);
+   \   000049                ; Setup parameters for call to function memset
+   \   000049   75..0F       MOV     ?V0 + 0,#0xf
+   \   00004C   F5..         MOV     ?V0 + 1,A
+   \   00004E   78..         MOV     R0,#?V0 + 0
+   \   000050   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000053   7C00         MOV     R4,#0x0
+   \   000055   7D00         MOV     R5,#0x0
+   \   000057   7A..         MOV     R2,#THCstr & 0xff
+   \   000059   7B..         MOV     R3,#(THCstr >> 8) & 0xff
+   \   00005B   12....       LCALL   ??memset?relay
+   \   00005E   7402         MOV     A,#0x2
+   \   000060   12....       LCALL   ?DEALLOC_XSTACK8
+    704          //                     THCstr[THCnum++] = '{';
+    705          //                     THCstr[THCnum++] = 'i';
+    706          //                     THCstr[THCnum++] = 'd';
+    707          //                     THCstr[THCnum++] = ':';
+    708          //                     THCstr[THCnum++] = '0';
+    709                               THCstr[THCnum++] = ZIGBEE_ID;
+   \   000063   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   000066   7431         MOV     A,#0x31
+   \   000068   12....       LCALL   ?Subroutine1 & 0xFFFF
+    710          //                     THCstr[THCnum++] = ',';
+    711          //                     THCstr[THCnum++] = 't';
+    712          //                     THCstr[THCnum++] = 'y';
+    713          //                     THCstr[THCnum++] = 'p';
+    714          //                     THCstr[THCnum++] = 'e';
+    715          //                     THCstr[THCnum++] = ':';
+    716          //                     THCstr[THCnum++] = '4';
+    717          //                     THCstr[THCnum++] = '8';
+    718          //                     THCstr[THCnum++] = '5';
+    719          //                     THCstr[THCnum++] = ',';
+    720                               
+    721                               temperture = ((GuangApp_TxBuf[5]) << 8 | GuangApp_TxBuf[6]);
+   \                     ??CrossCallReturnLabel_0:
+   \   00006B   90....       MOV     DPTR,#GuangApp_TxBuf + 5
+   \   00006E   E0           MOVX    A,@DPTR
+   \   00006F   F9           MOV     R1,A
+   \   000070   A3           INC     DPTR
+   \   000071   E0           MOVX    A,@DPTR
+   \   000072   F8           MOV     R0,A
+   \   000073   90....       MOV     DPTR,#temperture
+   \   000076   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    722                               if(temperture <1000 && temperture>0){
+   \                     ??CrossCallReturnLabel_44:
+   \   000079   90....       MOV     DPTR,#temperture
+   \   00007C   C3           CLR     C
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   94E8         SUBB    A,#-0x18
+   \   000080   A3           INC     DPTR
+   \   000081   E0           MOVX    A,@DPTR
+   \   000082   9403         SUBB    A,#0x3
+   \   000084   5068         JNC     ??CrossCallReturnLabel_3
+   \   000086   E8           MOV     A,R0
+   \   000087   49           ORL     A,R1
+   \   000088   6064         JZ      ??CrossCallReturnLabel_3
+    723                                  temperture_shi = temperture/100;
+   \   00008A   7A64         MOV     R2,#0x64
+   \   00008C   7B00         MOV     R3,#0x0
+   \   00008E   12....       LCALL   ?US_DIV_MOD
+   \   000091   90....       MOV     DPTR,#temperture_shi
+   \   000094   12....       LCALL   ?Subroutine3 & 0xFFFF
+    724                                  temperture_ge = (temperture%100)/10;
+   \                     ??CrossCallReturnLabel_15:
+   \   000097   7A64         MOV     R2,#0x64
+   \   000099   7B00         MOV     R3,#0x0
+   \   00009B   12....       LCALL   ?US_DIV_MOD
+   \   00009E   EA           MOV     A,R2
+   \   00009F   F8           MOV     R0,A
+   \   0000A0   EB           MOV     A,R3
+   \   0000A1   F9           MOV     R1,A
+   \   0000A2   7A0A         MOV     R2,#0xa
+   \   0000A4   7B00         MOV     R3,#0x0
+   \   0000A6   12....       LCALL   ?US_DIV_MOD
+   \   0000A9   90....       MOV     DPTR,#temperture_ge
+   \   0000AC   12....       LCALL   ?Subroutine3 & 0xFFFF
+    725                                  temperture_xiao = temperture%10;
+   \                     ??CrossCallReturnLabel_16:
+   \   0000AF   7A0A         MOV     R2,#0xa
+   \   0000B1   7B00         MOV     R3,#0x0
+   \   0000B3   12....       LCALL   ?US_DIV_MOD
+   \   0000B6   90....       MOV     DPTR,#temperture_xiao
+   \   0000B9   EA           MOV     A,R2
+   \   0000BA   F0           MOVX    @DPTR,A
+   \   0000BB   A3           INC     DPTR
+   \   0000BC   EB           MOV     A,R3
+   \   0000BD   F0           MOVX    @DPTR,A
+    726          //                         THCstr[THCnum++] = 't';
+    727          //                         THCstr[THCnum++] = 'e';
+    728          //                         THCstr[THCnum++] = 'm';
+    729          //                         THCstr[THCnum++] = ':';
+    730                                   THCstr[THCnum++] = temperture_shi+0x30;
+   \   0000BE   90....       MOV     DPTR,#temperture_shi
+   \   0000C1   E0           MOVX    A,@DPTR
+   \   0000C2   2430         ADD     A,#0x30
+   \   0000C4   C0E0         PUSH    A
+   \   0000C6   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   0000C9   D0E0         POP     A
+   \   0000CB   12....       LCALL   ?Subroutine1 & 0xFFFF
+    731                                   THCstr[THCnum++] = temperture_ge+0x30;
+   \                     ??CrossCallReturnLabel_1:
+   \   0000CE   90....       MOV     DPTR,#temperture_ge
+   \   0000D1   E0           MOVX    A,@DPTR
+   \   0000D2   2430         ADD     A,#0x30
+   \   0000D4   C0E0         PUSH    A
+   \   0000D6   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   0000D9   D0E0         POP     A
+   \   0000DB   12....       LCALL   ?Subroutine1 & 0xFFFF
+    732          //                         THCstr[THCnum++] = '.';
+    733                                   THCstr[THCnum++] = temperture_xiao+0x30;
+   \                     ??CrossCallReturnLabel_2:
+   \   0000DE   90....       MOV     DPTR,#temperture_xiao
+   \   0000E1   E0           MOVX    A,@DPTR
+   \   0000E2   2430         ADD     A,#0x30
+   \   0000E4   C0E0         PUSH    A
+   \   0000E6   12....       LCALL   ?Subroutine6 & 0xFFFF
+    734          //                         THCstr[THCnum++] = ',';
+    735                                }
+   \                     ??CrossCallReturnLabel_24:
+   \   0000E9   D0E0         POP     A
+   \   0000EB   12....       LCALL   ?Subroutine1 & 0xFFFF
+    736                               
+    737                               humidity485 = ((GuangApp_TxBuf[3]) << 8 | GuangApp_TxBuf[4]);
+   \                     ??CrossCallReturnLabel_3:
+   \   0000EE   90....       MOV     DPTR,#GuangApp_TxBuf + 3
+   \   0000F1   E0           MOVX    A,@DPTR
+   \   0000F2   F9           MOV     R1,A
+   \   0000F3   A3           INC     DPTR
+   \   0000F4   E0           MOVX    A,@DPTR
+   \   0000F5   F8           MOV     R0,A
+   \   0000F6   90....       MOV     DPTR,#humidity485
+   \   0000F9   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    738                               if(humidity485 <1000 && humidity485>0){
+   \                     ??CrossCallReturnLabel_45:
+   \   0000FC   90....       MOV     DPTR,#humidity485
+   \   0000FF   C3           CLR     C
+   \   000100   E0           MOVX    A,@DPTR
+   \   000101   94E8         SUBB    A,#-0x18
+   \   000103   A3           INC     DPTR
+   \   000104   E0           MOVX    A,@DPTR
+   \   000105   9403         SUBB    A,#0x3
+   \   000107   5068         JNC     ??CrossCallReturnLabel_6
+   \   000109   E8           MOV     A,R0
+   \   00010A   49           ORL     A,R1
+   \   00010B   6064         JZ      ??CrossCallReturnLabel_6
+    739                                  humidity_shi = humidity485/100;
+   \   00010D   7A64         MOV     R2,#0x64
+   \   00010F   7B00         MOV     R3,#0x0
+   \   000111   12....       LCALL   ?US_DIV_MOD
+   \   000114   90....       MOV     DPTR,#humidity_shi
+   \   000117   12....       LCALL   ?Subroutine4 & 0xFFFF
+    740                                  humidity_ge = (humidity485%100)/10;
+   \                     ??CrossCallReturnLabel_17:
+   \   00011A   7A64         MOV     R2,#0x64
+   \   00011C   7B00         MOV     R3,#0x0
+   \   00011E   12....       LCALL   ?US_DIV_MOD
+   \   000121   EA           MOV     A,R2
+   \   000122   F8           MOV     R0,A
+   \   000123   EB           MOV     A,R3
+   \   000124   F9           MOV     R1,A
+   \   000125   7A0A         MOV     R2,#0xa
+   \   000127   7B00         MOV     R3,#0x0
+   \   000129   12....       LCALL   ?US_DIV_MOD
+   \   00012C   90....       MOV     DPTR,#humidity_ge
+   \   00012F   12....       LCALL   ?Subroutine4 & 0xFFFF
+    741                                  humidity_xiao = humidity485%10;
+   \                     ??CrossCallReturnLabel_18:
+   \   000132   7A0A         MOV     R2,#0xa
+   \   000134   7B00         MOV     R3,#0x0
+   \   000136   12....       LCALL   ?US_DIV_MOD
+   \   000139   90....       MOV     DPTR,#humidity_xiao
+   \   00013C   EA           MOV     A,R2
+   \   00013D   F0           MOVX    @DPTR,A
+   \   00013E   A3           INC     DPTR
+   \   00013F   EB           MOV     A,R3
+   \   000140   F0           MOVX    @DPTR,A
+    742                                  
+    743          //                         THCstr[THCnum++] = 'h';
+    744          //                         THCstr[THCnum++] = 'u';
+    745          //                         THCstr[THCnum++] = 'm';
+    746          //                         THCstr[THCnum++] = ':';
+    747                                   THCstr[THCnum++] = humidity_shi+0x30;
+   \   000141   90....       MOV     DPTR,#humidity_shi
+   \   000144   E0           MOVX    A,@DPTR
+   \   000145   2430         ADD     A,#0x30
+   \   000147   C0E0         PUSH    A
+   \   000149   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   00014C   D0E0         POP     A
+   \   00014E   12....       LCALL   ?Subroutine1 & 0xFFFF
+    748                                   THCstr[THCnum++] = humidity_ge+0x30;
+   \                     ??CrossCallReturnLabel_4:
+   \   000151   90....       MOV     DPTR,#humidity_ge
+   \   000154   E0           MOVX    A,@DPTR
+   \   000155   2430         ADD     A,#0x30
+   \   000157   C0E0         PUSH    A
+   \   000159   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_26:
+   \   00015C   D0E0         POP     A
+   \   00015E   12....       LCALL   ?Subroutine1 & 0xFFFF
+    749          //                         THCstr[THCnum++] = '.';
+    750                                   THCstr[THCnum++] = humidity_xiao+0x30;
+   \                     ??CrossCallReturnLabel_5:
+   \   000161   90....       MOV     DPTR,#humidity_xiao
+   \   000164   E0           MOVX    A,@DPTR
+   \   000165   2430         ADD     A,#0x30
+   \   000167   C0E0         PUSH    A
+   \   000169   12....       LCALL   ?Subroutine6 & 0xFFFF
+    751          //                         THCstr[THCnum++] = ',';
+    752                                }
+   \                     ??CrossCallReturnLabel_27:
+   \   00016C   D0E0         POP     A
+   \   00016E   12....       LCALL   ?Subroutine1 & 0xFFFF
+    753                               
+    754          
+    755                             
+    756                             CO2 = ((GuangApp_TxBuf[17]) << 8 | GuangApp_TxBuf[18]);  
+   \                     ??CrossCallReturnLabel_6:
+   \   000171   90....       MOV     DPTR,#GuangApp_TxBuf + 17
+   \   000174   E0           MOVX    A,@DPTR
+   \   000175   F9           MOV     R1,A
+   \   000176   A3           INC     DPTR
+   \   000177   E0           MOVX    A,@DPTR
+   \   000178   F8           MOV     R0,A
+   \   000179   90....       MOV     DPTR,#CO2
+   \   00017C   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    757                               if(CO2 <10000 && CO2>0){
+   \                     ??CrossCallReturnLabel_46:
+   \   00017F   90....       MOV     DPTR,#CO2
+   \   000182   C3           CLR     C
+   \   000183   E0           MOVX    A,@DPTR
+   \   000184   9410         SUBB    A,#0x10
+   \   000186   A3           INC     DPTR
+   \   000187   E0           MOVX    A,@DPTR
+   \   000188   9427         SUBB    A,#0x27
+   \   00018A   4003         JC      $+5
+   \   00018C   02....       LJMP    ??CrossCallReturnLabel_10 & 0xFFFF
+   \   00018F   E8           MOV     A,R0
+   \   000190   49           ORL     A,R1
+   \   000191   7003         JNZ     $+5
+   \   000193   02....       LJMP    ??CrossCallReturnLabel_10 & 0xFFFF
+    758                                  CO2_qian = CO2/1000;
+   \   000196   7AE8         MOV     R2,#-0x18
+   \   000198   7B03         MOV     R3,#0x3
+   \   00019A   12....       LCALL   ?US_DIV_MOD
+   \   00019D   90....       MOV     DPTR,#CO2_qian
+   \   0001A0   12....       LCALL   ?Subroutine2 & 0xFFFF
+    759                                  CO2_bai = (CO2%1000)/100;
+   \                     ??CrossCallReturnLabel_12:
+   \   0001A3   7AE8         MOV     R2,#-0x18
+   \   0001A5   7B03         MOV     R3,#0x3
+   \   0001A7   12....       LCALL   ?US_DIV_MOD
+   \   0001AA   EA           MOV     A,R2
+   \   0001AB   F8           MOV     R0,A
+   \   0001AC   EB           MOV     A,R3
+   \   0001AD   F9           MOV     R1,A
+   \   0001AE   7A64         MOV     R2,#0x64
+   \   0001B0   7B00         MOV     R3,#0x0
+   \   0001B2   12....       LCALL   ?US_DIV_MOD
+   \   0001B5   90....       MOV     DPTR,#CO2_bai
+   \   0001B8   12....       LCALL   ?Subroutine2 & 0xFFFF
+    760                                  CO2_shi = (CO2%100)/10;
+   \                     ??CrossCallReturnLabel_13:
+   \   0001BB   7A64         MOV     R2,#0x64
+   \   0001BD   7B00         MOV     R3,#0x0
+   \   0001BF   12....       LCALL   ?US_DIV_MOD
+   \   0001C2   EA           MOV     A,R2
+   \   0001C3   F8           MOV     R0,A
+   \   0001C4   EB           MOV     A,R3
+   \   0001C5   F9           MOV     R1,A
+   \   0001C6   7A0A         MOV     R2,#0xa
+   \   0001C8   7B00         MOV     R3,#0x0
+   \   0001CA   12....       LCALL   ?US_DIV_MOD
+   \   0001CD   90....       MOV     DPTR,#CO2_shi
+   \   0001D0   12....       LCALL   ?Subroutine2 & 0xFFFF
+    761                                  CO2_ge = CO2%10;
+   \                     ??CrossCallReturnLabel_14:
+   \   0001D3   7A0A         MOV     R2,#0xa
+   \   0001D5   7B00         MOV     R3,#0x0
+   \   0001D7   12....       LCALL   ?US_DIV_MOD
+   \   0001DA   90....       MOV     DPTR,#CO2_ge
+   \   0001DD   EA           MOV     A,R2
+   \   0001DE   F0           MOVX    @DPTR,A
+   \   0001DF   A3           INC     DPTR
+   \   0001E0   EB           MOV     A,R3
+   \   0001E1   F0           MOVX    @DPTR,A
+    762          //                        THCstr[THCnum++] = 'c';
+    763          //                         THCstr[THCnum++] = 'o';
+    764          //                         THCstr[THCnum++] = '2';
+    765          //                         THCstr[THCnum++] = ':';
+    766                                   THCstr[THCnum++] = CO2_qian+0x30;
+   \   0001E2   90....       MOV     DPTR,#CO2_qian
+   \   0001E5   E0           MOVX    A,@DPTR
+   \   0001E6   2430         ADD     A,#0x30
+   \   0001E8   C0E0         PUSH    A
+   \   0001EA   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   0001ED   D0E0         POP     A
+   \   0001EF   12....       LCALL   ?Subroutine1 & 0xFFFF
+    767                                   THCstr[THCnum++] = CO2_bai+0x30;
+   \                     ??CrossCallReturnLabel_7:
+   \   0001F2   90....       MOV     DPTR,#CO2_bai
+   \   0001F5   E0           MOVX    A,@DPTR
+   \   0001F6   2430         ADD     A,#0x30
+   \   0001F8   C0E0         PUSH    A
+   \   0001FA   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   0001FD   D0E0         POP     A
+   \   0001FF   12....       LCALL   ?Subroutine1 & 0xFFFF
+    768                                   THCstr[THCnum++] = CO2_shi+0x30;
+   \                     ??CrossCallReturnLabel_8:
+   \   000202   90....       MOV     DPTR,#CO2_shi
+   \   000205   E0           MOVX    A,@DPTR
+   \   000206   2430         ADD     A,#0x30
+   \   000208   C0E0         PUSH    A
+   \   00020A   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   00020D   D0E0         POP     A
+   \   00020F   12....       LCALL   ?Subroutine1 & 0xFFFF
+    769                                   THCstr[THCnum++] = CO2_ge+0x30;
+   \                     ??CrossCallReturnLabel_9:
+   \   000212   90....       MOV     DPTR,#CO2_ge
+   \   000215   E0           MOVX    A,@DPTR
+   \   000216   2430         ADD     A,#0x30
+   \   000218   C0E0         PUSH    A
+   \   00021A   12....       LCALL   ?Subroutine6 & 0xFFFF
+    770          //                         THCstr[THCnum++] = ',';
+    771                                } 
+   \                     ??CrossCallReturnLabel_31:
+   \   00021D   D0E0         POP     A
+   \   00021F   12....       LCALL   ?Subroutine1 & 0xFFFF
+    772                              THCstr[THCnum++] = 'e';
+   \                     ??CrossCallReturnLabel_10:
+   \   000222   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   000225   7465         MOV     A,#0x65
+   \   000227   12....       LCALL   ?Subroutine1 & 0xFFFF
+    773                               HalUARTWrite(0,THCstr, THCnum);
+   \                     ??CrossCallReturnLabel_11:
+   \   00022A                ; Setup parameters for call to function HalUARTWrite
+   \   00022A   90....       MOV     DPTR,#THCnum
+   \   00022D   E0           MOVX    A,@DPTR
+   \   00022E   FC           MOV     R4,A
+   \   00022F   A3           INC     DPTR
+   \   000230   E0           MOVX    A,@DPTR
+   \   000231   FD           MOV     R5,A
+   \   000232   7A..         MOV     R2,#THCstr & 0xff
+   \   000234   7B..         MOV     R3,#(THCstr >> 8) & 0xff
+   \   000236   7900         MOV     R1,#0x0
+   \   000238   12....       LCALL   ??HalUARTWrite?relay
+    774                               AF_DataRequest( &GuangApp_DstAddr, &GuangApp_epDesc,
+    775                                 GENERICAPP_CLUSTERID,
+    776                                 THCnum,
+    777                                 THCstr,
+    778                                 &GuangApp_TransID,
+    779                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   00023B                ; Setup parameters for call to function AF_DataRequest
+   \   00023B   75..1E       MOV     ?V0 + 0,#0x1e
+   \   00023E   78..         MOV     R0,#?V0 + 0
+   \   000240   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000243   75....       MOV     ?V0 + 0,#GuangApp_TransID & 0xff
+   \   000246   75....       MOV     ?V0 + 1,#(GuangApp_TransID >> 8) & 0xff
+   \   000249   78..         MOV     R0,#?V0 + 0
+   \   00024B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00024E   75....       MOV     ?V0 + 0,#THCstr & 0xff
+   \   000251   75....       MOV     ?V0 + 1,#(THCstr >> 8) & 0xff
+   \   000254   78..         MOV     R0,#?V0 + 0
+   \   000256   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000259   90....       MOV     DPTR,#THCnum
+   \   00025C   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   00025F   75..01       MOV     ?V0 + 0,#0x1
+   \   000262   75..00       MOV     ?V0 + 1,#0x0
+   \   000265   78..         MOV     R0,#?V0 + 0
+   \   000267   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00026A   7920         MOV     R1,#0x20
+   \   00026C   7C..         MOV     R4,#GuangApp_epDesc & 0xff
+   \   00026E   7D..         MOV     R5,#(GuangApp_epDesc >> 8) & 0xff
+   \   000270   7A..         MOV     R2,#GuangApp_DstAddr & 0xff
+   \   000272   7B..         MOV     R3,#(GuangApp_DstAddr >> 8) & 0xff
+   \   000274   12....       LCALL   ??AF_DataRequest?relay
+   \   000277   7409         MOV     A,#0x9
+   \   000279   12....       LCALL   ?DEALLOC_XSTACK8
+    780                             }
+    781                            THCnum = 0;
+   \                     ??rxCB_3:
+   \   00027C   90....       MOV     DPTR,#THCnum
+   \   00027F   E4           CLR     A
+   \   000280   F0           MOVX    @DPTR,A
+   \   000281   A3           INC     DPTR
+   \   000282   F0           MOVX    @DPTR,A
+   \   000283   800D         SJMP    ??rxCB_1
+    782                          }
+    783                          else
+    784                          {
+    785                              HalUARTWrite(1, GuangApp_TxBuf, GuangApp_TxLen);
+   \                     ??rxCB_2:
+   \   000285                ; Setup parameters for call to function HalUARTWrite
+   \   000285   E0           MOVX    A,@DPTR
+   \   000286   FC           MOV     R4,A
+   \   000287   7D00         MOV     R5,#0x0
+   \   000289   7A..         MOV     R2,#GuangApp_TxBuf & 0xff
+   \   00028B   7B..         MOV     R3,#(GuangApp_TxBuf >> 8) & 0xff
+   \   00028D   7901         MOV     R1,#0x1
+   \   00028F   12....       LCALL   ??HalUARTWrite?relay
+    786                          }
+    787          
+    788                       }            
+    789          
+    790                      GuangApp_TxLen = 0;
+   \                     ??rxCB_1:
+   \   000292   90....       MOV     DPTR,#GuangApp_TxLen
+   \   000295   E4           CLR     A
+   \   000296   F0           MOVX    @DPTR,A
+    791                  }
+    792          }
+   \                     ??rxCB_0:
+   \   000297   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   90....       MOV     DPTR,#THCnum
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   24..         ADD     A,#THCstr & 0xff
+   \   000006   F8           MOV     R0,A
+   \   000007   A3           INC     DPTR
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   34..         ADDC    A,#(THCstr >> 8) & 0xff
+   \   00000B   F9           MOV     R1,A
+   \   00000C   8882         MOV     DPL,R0
+   \   00000E   8983         MOV     DPH,R1
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_50:
+   \   000003   90....       MOV     DPTR,#humidity485
+   \   000006   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_49:
+   \   000003   90....       MOV     DPTR,#temperture
+   \   000006   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_48:
+   \   000003   90....       MOV     DPTR,#CO2
+   \   000006   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_41:
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   90....       MOV     DPTR,#THCnum
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   2401         ADD     A,#0x1
+   \   000007   F0           MOVX    @DPTR,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   3400         ADDC    A,#0x0
+   \   00000C   F0           MOVX    @DPTR,A
+   \   00000D   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for THCAsk>`:
+   \   000000   01           DB 1
+   \   000001   03           DB 3
+   \   000002   00           DB 0
+   \   000003   00           DB 0
+   \   000004   00           DB 0
+   \   000005   08           DB 8
+   \   000006   44           DB 68
+   \   000007   0C           DB 12
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GuangApp_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GuangApp_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GuangApp_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GuangApp_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GuangApp_ProcessZDOMsgs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GuangApp_ProcessZDOMsgs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GuangApp_HandleKeys?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GuangApp_HandleKeys
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GuangApp_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GuangApp_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GuangApp_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GuangApp_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??rxCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    rxCB
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\n strTemp\\n">`:
+   \   000000   0A207374     DB "\012 strTemp\012"
+   \            7254656D
+   \            700A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "GuangApp">`:
+   \   000000   4775616E     DB "GuangApp"
+   \            67417070
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Rx:">`:
+   \   000000   52783A00     DB "Rx:"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\n">`:
+   \   000000   0A00         DB "\012"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "T&H:">`:
+   \   000000   5426483A     DB "T&H:"
+   \            00      
+    793          /*********************************************************************
+    794          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     GuangApp_HandleKeys              0      0      0
+     GuangApp_Init                    0      0      9
+       -> MT_UartInit                 0      0     18
+       -> MT_UartRegisterTaskID       0      0     18
+       -> HalUARTWrite                0      0     18
+       -> afRegister                  0      0     18
+       -> RegisterForKeys             0      0     18
+       -> HalLcdWriteString           0      0     18
+     GuangApp_MessageMSGCB            0      0     42
+       -> HalUARTWrite                0      0     32
+       -> HalUARTWrite                0      0     32
+       -> HalUARTWrite                0      0     32
+       -> HalUARTWrite                0      0     32
+       -> HalUARTWrite                0      0     32
+       -> HalUARTWrite                0      0     32
+     GuangApp_ProcessEvent            0      0     26
+       -> osal_msg_receive            0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> osal_start_timerEx          0      0     52
+       -> osal_msg_deallocate         0      0     52
+       -> osal_msg_receive            0      0     52
+       -> GuangApp_ProcessZDOMsgs     0      0     52
+       -> GuangApp_MessageMSGCB       0      0     52
+       -> LcdClearLine                0      0     52
+       -> LCD_P8x16Str                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> LCD_P16x16Ch                0      0     52
+       -> GuangApp_SendTheMessage     0      0     52
+       -> osal_start_timerEx          0      0     52
+     GuangApp_ProcessZDOMsgs          0      0     36
+       -> HalLedSet                   0      0     20
+       -> HalLedSet                   0      0     20
+       -> ZDO_ParseEPListRsp          0      0     20
+       -> HalLedSet                   0      0     20
+       -> osal_mem_free               0      0     20
+     GuangApp_SendTheMessage          1      0     65
+       -> HalUARTWrite                0      0     60
+       -> DHT11                       0      0     60
+       -> LCD_P16x16Ch                0      0     60
+       -> LCD_P16x16Ch                0      0     60
+       -> LCD_P16x16Ch                0      0     60
+       -> LCD_P16x16Ch                0      0     60
+       -> osal_memcpy                 0      0     66
+       -> osal_memcpy                 0      0     66
+       -> osal_memcpy                 0      0     66
+       -> HalUARTWrite                0      0     60
+       -> HalUARTWrite                0      0     60
+       -> HalUARTWrite                0      0     60
+       -> LCD_P8x16Str                0      0     60
+       -> LCD_P8x16Str                0      0     60
+       -> AF_DataRequest              0      0     78
+     rxCB                             1      0     19
+       -> HalUARTRead                 0      0     20
+       -> HalLedSet                   0      0     20
+       -> memset                      0      0     24
+       -> HalUARTWrite                0      0     20
+       -> AF_DataRequest              0      0     38
+       -> HalUARTWrite                0      0     20
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     _A_P0                              1
+     _A_P1                              1
+     P0SEL                              1
+     P1SEL                              1
+     P0DIR                              1
+     P1DIR                              1
+     GuangApp_ClusterList               2
+     GuangApp_SimpleDesc               12
+     GuangApp_epDesc                    6
+     GuangApp_TaskID                    1
+     GuangApp_NwkState                  1
+     GuangApp_TransID                   1
+     GuangApp_DstAddr                  12
+     GuangApp_Broadcast                12
+     Light_Work_State                   1
+     Fans_Work_State                    1
+     Feng_Work_State                    1
+     GuangApp_TxBuf                    26
+     GuangApp_TxLen                     1
+     THCAsk                             8
+     THCnum                             2
+     THCstr                            15
+     GuangApp_Init                    164
+     GuangApp_ProcessEvent            478
+     ?Subroutine9                      14
+     ?Subroutine8                      20
+     GuangApp_ProcessZDOMsgs          150
+     ?Subroutine0                       5
+     ?Subroutine10                      1
+     ??Subroutine12_0                   5
+     ?Subroutine11                      6
+     GuangApp_HandleKeys                3
+     GuangApp_MessageMSGCB            261
+     ?Subroutine7                      14
+     ?Subroutine5                      52
+     GuangApp_SendTheMessage          556
+     send                               1
+     rxCB                             666
+     ?Subroutine6                      17
+     ?Subroutine4                      10
+     ?Subroutine3                      10
+     ?Subroutine2                      10
+     ?Subroutine1                      14
+     ?<Initializer for THCAsk>          8
+     ??GuangApp_Init?relay              6
+     ??GuangApp_ProcessEvent?relay      6
+     ??GuangApp_ProcessZDOMsgs?relay    6
+     ??GuangApp_HandleKeys?relay        6
+     ??GuangApp_MessageMSGCB?relay      6
+     ??GuangApp_SendTheMessage?relay    6
+     ??rxCB?relay                       6
+     ?<Constant "\n strTemp\n">        11
+     ?<Constant "GuangApp">             9
+     ?<Constant "Rx:">                  4
+     ?<Constant "\n">                   2
+     ?<Constant "T&H:">                 5
+
+ 
+ 2 456 bytes in segment BANKED_CODE
+    42 bytes in segment BANK_RELAYS
+     6 bytes in segment SFR_AN
+     8 bytes in segment XDATA_I
+     8 bytes in segment XDATA_ID
+    45 bytes in segment XDATA_ROM_C
+    81 bytes in segment XDATA_Z
+ 
+ 2 506 bytes of CODE  memory
+    45 bytes of CONST memory
+     0 bytes of DATA  memory (+ 6 bytes shared)
+    89 bytes of XDATA memory
+
+Errors: none
+Warnings: none

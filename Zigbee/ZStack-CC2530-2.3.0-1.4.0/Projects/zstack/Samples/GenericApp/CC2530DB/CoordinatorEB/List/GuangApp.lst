@@ -1,0 +1,718 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         18/Apr/2021  22:45:51 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\Source\GuangAp #
+#                          p.c                                                #
+#    Command line       =  -f C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\GenericApp\CC2530DB\.. #
+#                          \..\..\Tools\CC2530DB\f8wCoord.cfg (-DCPU32MHZ     #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x1454                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\Source\GuangAp #
+#                          p.c -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D       #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC             #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\Coord #
+#                          inatorEB\List\ -lA C:\zigbeetest\MyProject2\ZStack #
+#                          -CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Generi #
+#                          cApp\CC2530DB\CoordinatorEB\List\ --diag_suppress  #
+#                          Pe001,Pa010 -o C:\zigbeetest\MyProject2\ZStack-CC2 #
+#                          530-2.3.0-1.4.0\Projects\zstack\Samples\GenericApp #
+#                          \CC2530DB\CoordinatorEB\Obj\ -e --debug            #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\zigbeetest\MyProject2\Z #
+#                          Stack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\G #
+#                          enericApp\CC2530DB\ -I C:\zigbeetest\MyProject2\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Ge #
+#                          nericApp\CC2530DB\..\SOURCE\ -I                    #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\ZMAIN\TI2530DB\ -I C:\zigbeetest\MyProject2\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Ge #
+#                          nericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\    #
+#                          -I C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\GenericApp\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I       #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\OSAL\INCLUDE\ -I              #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\AF\ -I                  #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\NWK\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SEC\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SAPI\ -I                #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SYS\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\ZDO\ -I                 #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\ZMAC\F8W\ -I                  #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\ZMAC\ -I                      #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\SERVICES\SADDR\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\SERVICES\SDATA\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\INCLUDE\ -I               #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I            #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I       #
+#                          C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CH #
+#                          IP\ -Ohz --require_prototypes                      #
+#    List file          =  C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\Coord #
+#                          inatorEB\List\GuangApp.lst                         #
+#    Object file        =  C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\GenericApp\CC2530DB\Coord #
+#                          inatorEB\Obj\GuangApp.r51                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\zigbeetest\MyProject2\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\GenericApp\Source\GuangApp.c
+      1          
+      2          
+      3          /*********************************************************************
+      4           * INCLUDES
+      5           */
+      6          #include <string.h>
+      7          #include <stdio.h>
+      8          #include "OSAL.h"
+      9          #include "AF.h"
+     10          #include "ZDApp.h"
+     11          #include "ZDObject.h"
+     12          #include "ZDProfile.h"
+     13          
+     14          #include "GuangApp.h"
+     15          #include "DebugTrace.h"
+     16          
+     17          #if !defined( WIN32 )
+     18            #include "OnBoard.h"
+     19          #endif
+     20          
+     21          /* HAL */
+     22          #include "hal_lcd.h"
+     23          #include "hal_led.h"
+     24          #include "hal_key.h"
+     25          #include "hal_uart.h"
+     26          #include "MT_UART.h"
+     27          
+     28          #include "DHT11.H"
+     29          /*********************************************************************
+     30           * MACROS
+     31           */
+     32          
+     33          /*********************************************************************
+     34           * CONSTANTS
+     35           */
+     36          
+     37          /*********************************************************************
+     38           * TYPEDEFS
+     39           */
+     40          
+     41          /*********************************************************************
+     42           * GLOBAL VARIABLES
+     43           */
+     44          
+     45          // This list should be filled with Application specific Cluster IDs.
+     46          const cId_t GuangApp_ClusterList[GENERICAPP_MAX_CLUSTERS] =
+     47          {
+     48            GENERICAPP_CLUSTERID
+     49          };
+     50          
+     51          const SimpleDescriptionFormat_t GuangApp_SimpleDesc =
+     52          {
+     53            GENERICAPP_ENDPOINT,              //  int Endpoint;
+     54            GENERICAPP_PROFID,                //  uint16 AppProfId[2];
+     55            GENERICAPP_DEVICEID,              //  uint16 AppDeviceId[2];
+     56            GENERICAPP_DEVICE_VERSION,        //  int   AppDevVer:4;
+     57            GENERICAPP_FLAGS,                 //  int   AppFlags:4;
+     58            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     59            (cId_t *)GuangApp_ClusterList,  //  byte *pAppInClusterList;
+     60            GENERICAPP_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     61            (cId_t *)GuangApp_ClusterList   //  byte *pAppInClusterList;
+     62          };
+     63          
+     64          // This is the Endpoint/Interface description.  It is defined here, but
+     65          // filled-in in GuangApp_Init().  Another way to go would be to fill
+     66          // in the structure here and make it a "const" (in code space).  The
+     67          // way it's defined in this sample app it is define in RAM.
+     68          endPointDesc_t GuangApp_epDesc;
+     69          
+     70          /*********************************************************************
+     71           * EXTERNAL VARIABLES
+     72           */
+     73          
+     74          /*********************************************************************
+     75           * EXTERNAL FUNCTIONS
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * LOCAL VARIABLES
+     80           */
+     81          byte GuangApp_TaskID;   // Task ID for internal task/event processing
+     82                                    // This variable will be received when
+     83                                    // GuangApp_Init() is called.
+     84          devStates_t GuangApp_NwkState;
+     85          
+     86          
+     87          byte GuangApp_TransID;  // This is the unique message ID (counter)
+     88          
+     89          afAddrType_t GuangApp_DstAddr;   //点播
+     90          afAddrType_t GuangApp_Broadcast;   //广播
+     91          
+     92          #define GUANG_APP_TX_MAX  50    //串口数据最大  大小
+     93          static uint8 GuangApp_TxBuf[GUANG_APP_TX_MAX+1];   //串口数据
+     94          static uint8 GuangApp_TxLen;   //串口数据大小
+     95          
+     96          #define FENG      P1_0            //蜂鸣器控制端口
+     97          #define MYLED     P1_1            //灯控制端口        
+     98          #define MQ_PIN    P0_6            //可燃气体传感器控制端口  
+     99          #define LIGHT_PIN P1_6            //光敏传感器控制端口 
+    100          /*********************************************************************
+    101           * LOCAL FUNCTIONS
+    102           */
+    103          void GuangApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    104          void GuangApp_HandleKeys( byte shift, byte keys );
+    105          void GuangApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    106          void GuangApp_SendTheMessage( void );
+    107          
+    108          /*********************************************************************
+    109           * NETWORK LAYER CALLBACKS
+    110           */
+    111          
+    112          /*********************************************************************
+    113           * PUBLIC FUNCTIONS
+    114           */
+    115          
+    116          /*********************************************************************
+    117           * @fn      GuangApp_Init
+    118           *
+    119           * @brief   Initialization function for the Generic App Task.
+    120           *          This is called during initialization and should contain
+    121           *          any application specific initialization (ie. hardware
+    122           *          initialization/setup, table initialization, power up
+    123           *          notificaiton ... ).
+    124           *
+    125           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    126           *                    used to send messages and set timers.
+    127           *
+    128           * @return  none
+    129           */
+    130          void GuangApp_Init( byte task_id )
+    131          {
+    132            GuangApp_TaskID = task_id;
+    133            GuangApp_NwkState = DEV_INIT;
+    134            GuangApp_TransID = 0;
+    135          
+    136            //------------------------配置串口---------------------------------
+    137            MT_UartInit();                    //串口初始化   里面可以修改波特率
+    138            MT_UartRegisterTaskID(task_id);   //注册串口任务
+    139            HalUARTWrite(0,"\n strTemp\n", sizeof("\n strTemp\n"));//串口发送
+    140            //-----------------------------------------------------------------
+    141          
+    142             //----------初始化IO口-------------------
+    143            P0SEL &= 0x3f;                //P0_6 7定义为通用IO口  0011 1111
+    144            P1SEL &= 0xbc;                //P1_0 1 6定义为通用IO口  1011 1100
+    145            P0DIR &= ~0xc0;               //P0_6 7初始化为输入口  0011 1111
+    146            P1DIR |= 0x03;               //P1_0 1初始化为输出口   0000 0011
+    147            P1DIR &= ~0x40;               //P1_6初始化为输入口
+    148            MYLED = 0;                 //熄灭灯    
+    149            FENG = 1;                 //关蜂鸣器
+    150            //----------------------------------------
+    151           
+    152              // Broadcast to everyone 发送模式:广播发送
+    153            GuangApp_Broadcast.addrMode = (afAddrMode_t)AddrBroadcast;//广播
+    154            GuangApp_Broadcast.endPoint = GENERICAPP_ENDPOINT; //指定端点号
+    155            GuangApp_Broadcast.addr.shortAddr = 0xFFFF;//指定目的网络地址为广播地址
+    156            
+    157            GuangApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    158            GuangApp_DstAddr.endPoint = GENERICAPP_ENDPOINT;
+    159            GuangApp_DstAddr.addr.shortAddr = 0x0000;
+    160          
+    161            // Fill out the endpoint description.
+    162            GuangApp_epDesc.endPoint = GENERICAPP_ENDPOINT;
+    163            GuangApp_epDesc.task_id = &GuangApp_TaskID;
+    164            GuangApp_epDesc.simpleDesc
+    165                      = (SimpleDescriptionFormat_t *)&GuangApp_SimpleDesc;
+    166            GuangApp_epDesc.latencyReq = noLatencyReqs;
+    167          
+    168            // Register the endpoint description with the AF
+    169            afRegister( &GuangApp_epDesc );
+    170          
+    171            // Register for all key events - This app will handle all key events
+    172            RegisterForKeys( GuangApp_TaskID );
+    173          
+    174            // Update the display
+    175          #if defined ( LCD_SUPPORTED )
+    176              HalLcdWriteString( "GuangApp", HAL_LCD_LINE_1 );
+    177          #endif
+    178              
+    179          //  ZDO_RegisterForZDOMsg( GuangApp_TaskID, End_Device_Bind_rsp );    ???
+    180          //  ZDO_RegisterForZDOMsg( GuangApp_TaskID, Match_Desc_rsp );      ???
+    181          }
+    182          
+    183          /*********************************************************************
+    184           * @fn      GuangApp_ProcessEvent
+    185           *
+    186           * @brief   Generic Application Task event processor.  This function
+    187           *          is called to process all events for the task.  Events
+    188           *          include timers, messages and any other user defined events.
+    189           *
+    190           * @param   task_id  - The OSAL assigned task ID.
+    191           * @param   events - events to process.  This is a bit map and can
+    192           *                   contain more than one event.
+    193           *
+    194           * @return  none
+    195           */
+    196          UINT16 GuangApp_ProcessEvent( byte task_id, UINT16 events )
+    197          {
+    198            afIncomingMSGPacket_t *MSGpkt;
+    199            afDataConfirm_t *afDataConfirm;
+    200          
+    201            // Data Confirmation message fields
+    202            byte sentEP;
+    203            ZStatus_t sentStatus;
+    204            byte sentTransID;       // This should match the value sent
+    205            (void)task_id;  // Intentionally unreferenced parameter
+    206          
+    207            if ( events & SYS_EVENT_MSG )
+    208            {
+    209              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GuangApp_TaskID );
+    210              while ( MSGpkt )
+    211              {
+    212                switch ( MSGpkt->hdr.event )
+    213                {
+    214                  case ZDO_CB_MSG:
+    215                    GuangApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    216                    break;
+    217                    
+    218                  case KEY_CHANGE:
+    219                    GuangApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    220                    break;
+    221          
+    222                  case AF_DATA_CONFIRM_CMD:
+    223                    // This message is received as a confirmation of a data packet sent.
+    224                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    225                    // The message fields are defined in AF.h
+    226                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    227                    sentEP = afDataConfirm->endpoint;
+    228                    sentStatus = afDataConfirm->hdr.status;
+    229                    sentTransID = afDataConfirm->transID;
+    230                    (void)sentEP;
+    231                    (void)sentTransID;
+    232          
+    233                    // Action taken when confirmation is received.
+    234                    if ( sentStatus != ZSuccess )
+    235                    {
+    236                      // The data wasn't delivered -- Do something
+    237                    }
+    238                    break;
+    239          
+    240                  case AF_INCOMING_MSG_CMD:
+    241                    GuangApp_MessageMSGCB( MSGpkt );
+    242                    break;
+    243          
+    244                  case ZDO_STATE_CHANGE:
+    245                    GuangApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    246                    if ( //(GuangApp_NwkState == DEV_ZB_COORD)
+    247                        //|| (GuangApp_NwkState == DEV_ROUTER)
+    248                        //|| 
+    249                          (GuangApp_NwkState == DEV_END_DEVICE) )
+    250                    {
+    251                      // Start sending "the" message in a regular interval.
+    252                      osal_start_timerEx( GuangApp_TaskID,
+    253                                          GENERICAPP_SEND_MSG_EVT,
+    254                                        GENERICAPP_SEND_MSG_TIMEOUT );
+    255                    }
+    256                    break;
+    257          
+    258                  default:
+    259                    break;
+    260                }
+    261          
+    262                // Release the memory
+    263                osal_msg_deallocate( (uint8 *)MSGpkt );
+    264          
+    265                // Next
+    266                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GuangApp_TaskID );
+    267              }
+    268          
+    269              // return unprocessed events
+    270              return (events ^ SYS_EVENT_MSG);
+    271            }
+    272          
+    273            // Send a message out - This event is generated by a timer
+    274            //  (setup in GuangApp_Init()).
+    275            if ( events & GENERICAPP_SEND_MSG_EVT )
+    276            {
+    277              // Send "the" message
+    278              GuangApp_SendTheMessage();
+    279          
+    280              // Setup to send message again
+    281              osal_start_timerEx( GuangApp_TaskID,
+    282                                  GENERICAPP_SEND_MSG_EVT,
+    283                                GENERICAPP_SEND_MSG_TIMEOUT );
+    284          
+    285              // return unprocessed events
+    286              return (events ^ GENERICAPP_SEND_MSG_EVT);
+    287            }
+    288          
+    289            // Discard unknown events
+    290            return 0;
+    291          }
+    292          
+    293          /*********************************************************************
+    294           * Event Generation Functions
+    295           */
+    296          
+    297          /*********************************************************************
+    298           * @fn      GuangApp_ProcessZDOMsgs()
+    299           *
+    300           * @brief   Process response messages
+    301           *
+    302           * @param   none
+    303           *
+    304           * @return  none
+    305           */
+    306          void GuangApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    307          {
+    308            switch ( inMsg->clusterID )
+    309            {
+    310              case End_Device_Bind_rsp:
+    311                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    312                {
+    313                  // Light LED
+    314                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    315                }
+    316          #if defined(BLINK_LEDS)
+    317                else
+    318                {
+    319                  // Flash LED to show failure
+    320                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+    321                }
+    322          #endif
+    323                break;
+    324          
+    325              case Match_Desc_rsp:
+    326                {
+    327                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+    328                  if ( pRsp )
+    329                  {
+    330                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+    331                    {
+    332                      GuangApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    333                      GuangApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+    334                      // Take the first endpoint, Can be changed to search through endpoints
+    335                      GuangApp_DstAddr.endPoint = pRsp->epList[0];
+    336          
+    337                      // Light LED
+    338                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    339                    }
+    340                    osal_mem_free( pRsp );
+    341                  }
+    342                }
+    343                break;
+    344            }
+    345          }
+    346          
+    347          /*********************************************************************
+    348           * @fn      GuangApp_HandleKeys
+    349           *
+    350           * @brief   Handles all key events for this device.
+    351           *
+    352           * @param   shift - true if in shift/alt.
+    353           * @param   keys - bit field for key events. Valid entries:
+    354           *                 HAL_KEY_SW_4
+    355           *                 HAL_KEY_SW_3
+    356           *                 HAL_KEY_SW_2
+    357           *                 HAL_KEY_SW_1
+    358           *
+    359           * @return  none
+    360           */
+    361          void GuangApp_HandleKeys( byte shift, byte keys )
+    362          {
+    363            zAddrType_t dstAddr;
+                               ^
+Warning[Pe177]: variable "dstAddr" was declared but never referenced
+    364            
+    365            // Shift is used to make each button/switch dual purpose.
+    366            if ( shift )
+    367            {
+    368              if ( keys & HAL_KEY_SW_1 )
+    369              {
+    370              }
+    371              if ( keys & HAL_KEY_SW_2 )
+    372              {
+    373              }
+    374              if ( keys & HAL_KEY_SW_3 )
+    375              {
+    376              }
+    377              if ( keys & HAL_KEY_SW_4 )
+    378              {
+    379              }
+    380            }
+    381            else
+    382            {
+    383              if ( keys & HAL_KEY_SW_1 )
+    384              {
+    385              }
+    386          
+    387              if ( keys & HAL_KEY_SW_2 )
+    388              {
+    389          //      HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    390          //
+    391          //      // Initiate an End Device Bind Request for the mandatory endpoint
+    392          //      dstAddr.addrMode = Addr16Bit;
+    393          //      dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    394          //      ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(), 
+    395          //                            GuangApp_epDesc.endPoint,
+    396          //                            GENERICAPP_PROFID,
+    397          //                            GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    398          //                            GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    399          //                            FALSE );
+    400              }
+    401          
+    402              if ( keys & HAL_KEY_SW_3 )
+    403              {
+    404              }
+    405          
+    406              if ( keys & HAL_KEY_SW_4 )
+    407              {
+    408          //      HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    409          //      // Initiate a Match Description Request (Service Discovery)
+    410          //      dstAddr.addrMode = AddrBroadcast;
+    411          //      dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    412          //      ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    413          //                        GENERICAPP_PROFID,
+    414          //                        GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    415          //                        GENERICAPP_MAX_CLUSTERS, (cId_t *)GuangApp_ClusterList,
+    416          //                        FALSE );
+    417              }
+    418            }
+    419          }
+    420          
+    421          /*********************************************************************
+    422           * LOCAL FUNCTIONS
+    423           */
+    424          
+    425          /*********************************************************************
+    426           * @fn      GuangApp_MessageMSGCB
+    427           *
+    428           * @brief   Data message processor callback.  This function processes
+    429           *          any incoming data - probably from other devices.  So, based
+    430           *          on cluster ID, perform the intended action.
+    431           *
+    432           * @param   none
+    433           *
+    434           * @return  none
+    435           */
+    436          void GuangApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    437          {
+    438            switch ( pkt->clusterId )
+    439            {
+    440              case GENERICAPP_CLUSTERID:   //点播收到信息
+    441                
+    442                HalUARTWrite(0, "Rx:", 3); //提示信息 
+    443                HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据 
+    444                HalUARTWrite(0, "\n", 1); //回车换行 
+    445                HalUARTWrite(1, "Rx:", 3); //提示信息 
+    446                HalUARTWrite(1, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据 
+    447                HalUARTWrite(1, "\n", 1); //回车换行 
+    448              break;
+    449                
+    450              case GENERICAPP_BROADCASTID:   //广播收到信息
+    451                
+    452                HalUARTWrite(0, "Rx:", 3); //提示信息 
+    453                HalUARTWrite(0, pkt->cmd.Data, pkt->cmd.DataLength); //输出接收到的数据 
+    454                HalUARTWrite(0, "\n", 1); //回车换行 
+    455                break;  
+    456            }
+    457          }
+    458          
+    459          /*********************************************************************
+    460           * @fn      GuangApp_SendTheMessage
+    461           *
+    462           * @brief   Send "the" message.
+    463           *
+    464           * @param   none
+    465           *
+    466           * @return  none
+    467           */
+    468          void GuangApp_SendTheMessage( void )
+    469          {
+    470            
+    471            char theMessageData[] = "Hello World";
+                        ^
+Warning[Pe177]: variable "theMessageData" was declared but never referenced
+    472          
+    473            byte i, temp[3], humidity[3], strTemp[7]; 
+    474            
+    475              //光敏传感器和可燃气体传感器处理
+    476              if(MQ_PIN == 0)         //当浓度高于设定值时 ，执行条件函数        
+    477              {
+    478                FENG = 0;          //开蜂鸣器
+    479              }else
+    480              {
+    481                FENG = 1;         //关蜂鸣器
+    482              }
+    483              
+    484              if(LIGHT_PIN == 1)    //当光敏电阻处于黑暗中时，LED亮
+    485              {
+    486                  MYLED = 1;
+    487              }
+    488              else
+    489              {
+    490                  MYLED =  0;       //检测到光线时，低电平LED关闭
+    491              }
+    492            
+    493            //ds18b20处理
+    494            DHT11(); //获取温湿度 
+    495            //将温湿度的转换成字符串,供 LCD 显示 
+    496            temp[0] = wendu_shi+0x30; 
+    497            temp[1] = wendu_ge+0x30; 
+    498            temp[2] = '\0'; 
+    499            humidity[0] = shidu_shi+0x30; 
+    500            humidity[1] = shidu_ge+0x30; 
+    501            humidity[2] = '\0'; 
+    502            //将数据整合后方便发给协调器显示 
+    503            osal_memcpy(strTemp, temp, 2); 
+    504            osal_memcpy(&strTemp[2], " ", 2); 
+    505            osal_memcpy(&strTemp[4], humidity, 3); 
+    506            //获得的温湿度通过串口输出到电脑显示 
+    507            HalUARTWrite(0, "T&H:", 4); 
+    508            HalUARTWrite(0, strTemp, 6); 
+    509            HalUARTWrite(0, "\n",1); 
+    510            
+    511            //输出到 LCD 显示 
+    512            for(i=0; i<3; i++) //输出温度、湿度提示字符 
+    513            { 
+    514              if(i==0) 
+    515              { 
+    516                LCD_P16x16Ch(i*16,4,i*16); 
+    517                LCD_P16x16Ch(i*16,6,(i+3)*16); 
+    518              } 
+    519              else 
+    520              { 
+    521                LCD_P16x16Ch(i*16,4,i*16); 
+    522                LCD_P16x16Ch(i*16,6,i*16); 
+    523              } 
+    524            } 
+    525            LCD_P8x16Str(44, 4, temp); //LCD 显示温度值 
+    526            LCD_P8x16Str(44, 6, humidity); //LCD 显示湿度值
+    527            
+    528          
+    529            
+    530            //发送给协调器
+    531            if ( AF_DataRequest( &GuangApp_DstAddr, &GuangApp_epDesc,
+    532                                 GENERICAPP_CLUSTERID,
+    533                                 6,
+    534                                 strTemp,
+    535                                 &GuangApp_TransID,
+    536                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+    537            {
+    538              // Successfully requested to be sent.
+    539            }
+    540            else
+    541            {
+    542              // Error occurred in request to send.
+    543            }
+    544          }
+    545          
+    546          extern void rxCB(uint8 port,uint8 event)
+                             ^
+Error[Pa045]: function "rxCB" has no prototype
+    547          {
+    548            
+    549            if (GuangApp_TxLen < GUANG_APP_TX_MAX)
+    550            {
+    551              GuangApp_TxLen = HalUARTRead(port, GuangApp_TxBuf, GUANG_APP_TX_MAX);
+    552              if (GuangApp_TxLen)
+    553              {
+    554                 if(port==1)
+    555                  {
+    556                    if (GuangApp_NwkState == DEV_ZB_COORD)
+    557                    {
+    558                      HalUARTWrite(0, GuangApp_TxBuf, GuangApp_TxLen);
+    559                      if( AF_DataRequest( &GuangApp_Broadcast,         //发送目的地址
+    560                                 &GuangApp_epDesc,                    //源
+    561                                 GENERICAPP_BROADCASTID,       //集群号
+    562                                 GuangApp_TxLen,                             // 发送数据长度
+    563                                 GuangApp_TxBuf,                  // 发送数据缓冲区
+    564                                 &GuangApp_TransID,     // 任务ID号
+    565                                 AF_DISCV_ROUTE,      // 有效位掩码的发送选项
+    566                                 AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )  //传送跳数，通常设置为AF_DEFAULT_RADIUS
+    567                      {
+    568                      }
+    569                    }
+    570                  }
+    571              }            
+    572              GuangApp_TxLen = 0;
+    573            }
+    574          }
+    575          /*********************************************************************
+    576          *********************************************************************/
+
+Errors: 1
+Warnings: 2

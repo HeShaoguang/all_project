@@ -1,0 +1,856 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         24/Mar/2021  22:07:00 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\Source\THC485.c #
+#    Command line       =  -f C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4 #
+#                          .0\Projects\zstack\Samples\GenericApp\CC2530DB\..\ #
+#                          ..\..\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ      #
+#                          -DROOT=__near_func -DBLINK_LEDS) -f                #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0        #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x1454                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\Source\THC485.c #
+#                           -D ZIGBEEPRO -D NWK_AUTO_POLL -D ZTOOL_P1 -D      #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC           #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\EndDev #
+#                          iceEB-Pro\List\ -lA C:\zigbeetest\MyProject\ZStack #
+#                          -CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Generi #
+#                          cApp\CC2530DB\EndDeviceEB-Pro\List\                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\EndDev #
+#                          iceEB-Pro\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\zigbeetest\MyProject\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Ge #
+#                          nericApp\CC2530DB\ -I C:\zigbeetest\MyProject\ZSta #
+#                          ck-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Gene #
+#                          ricApp\CC2530DB\..\SOURCE\ -I                      #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\ZMAIN\TI2530DB\ -I C:\zigbeetest\MyProject\ZSta #
+#                          ck-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Gene #
+#                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I   #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HAL\INCLUDE\ -I                #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I        #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I             #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\OSAL\INCLUDE\ -I               #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\STACK\AF\ -I                   #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\STACK\NWK\ -I                  #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\STACK\SEC\ -I                  #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\STACK\SAPI\ -I                 #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\STACK\SYS\ -I                  #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\STACK\ZDO\ -I                  #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\ZMAC\F8W\ -I                   #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\ZMAC\ -I                       #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\SERVICES\SADDR\ -I             #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\SERVICES\SDATA\ -I             #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\MAC\INCLUDE\ -I                #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I             #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I        #
+#                          C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHI #
+#                          P\ -Ohz                                            #
+#    List file          =  C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\EndDev #
+#                          iceEB-Pro\List\THC485.lst                          #
+#    Object file        =  C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\ #
+#                          Projects\zstack\Samples\GenericApp\CC2530DB\EndDev #
+#                          iceEB-Pro\Obj\THC485.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\zigbeetest\MyProject\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\GenericApp\Source\THC485.c
+      1          #include <ioCC2530.h>
+      2          #include "OnBoard.h"
+      3          #include "THC485.h"
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   uint8 Rx1_num
+   \                     Rx1_num:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+      4          
+      5          
+      6          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      7          uint16 temperture;
+   \                     temperture:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          uint16 temperture_shi, temperture_ge, temperture_xiao;
+   \                     temperture_shi:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     temperture_ge:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     temperture_xiao:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          uint16 humidity485;
+   \                     humidity485:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     10          uint16 humidity_shi, humidity_ge, humidity_xiao;
+   \                     humidity_shi:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     humidity_ge:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     humidity_xiao:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          uint16 CO2;
+   \                     CO2:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     12          uint16 CO2_qian, CO2_bai, CO2_shi, CO2_ge;
+   \                     CO2_qian:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     CO2_bai:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     CO2_shi:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     CO2_ge:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     13          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     14          uint8 HATstr[13];
+   \                     HATstr:
+   \   000000                DS 13
+   \   00000D                REQUIRE __INIT_XDATA_Z
+     15          
+     16          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          uint16 GetCrcData(uint8 *buffer, uint16 len)
+   \                     GetCrcData:
+     18          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+     19            uint16 wcrc = 0XFFFF;//16位crc寄存器预置
+   \   000009   78FF         MOV     R0,#-0x1
+   \   00000B   79FF         MOV     R1,#-0x1
+     20            uint8 temp;
+     21            uint16 i = 0, j = 0;//计数
+     22            for (i = 0; i < len; i++)//循环计算每个数据
+   \   00000D   7E00         MOV     R6,#0x0
+   \   00000F   7F00         MOV     R7,#0x0
+   \   000011   8011         SJMP    ??GetCrcData_0
+     23            {
+     24              temp = *buffer & 0X00FF;//将八位数据与crc寄存器亦或
+     25              buffer++;//指针地址增加，指向下个数据
+     26              wcrc ^= temp;//将数据存入crc寄存器
+     27              for (j = 0; j < 8; j++)//循环计算数据的
+     28              {
+     29                if (wcrc & 0X0001)//判断右移出的是不是1，如果是1则与多项式进行异或。
+     30                {
+     31                  wcrc >>= 1;//先将数据右移一位
+     32                  wcrc ^= 0XA001;//与上面的多项式进行异或
+     33                }
+     34                else//如果不是1，则直接移出
+     35                {
+     36                  wcrc >>= 1;//直接移出
+   \                     ??GetCrcData_1:
+   \   000013   F8           MOV     R0,A
+   \   000014   EB           MOV     A,R3
+   \                     ??GetCrcData_2:
+   \   000015   F9           MOV     R1,A
+     37                }
+   \   000016   15..         DEC     ?V0 + 0
+   \   000018   E5..         MOV     A,?V0 + 0
+   \   00001A   7016         JNZ     ??GetCrcData_3
+   \   00001C   EE           MOV     A,R6
+   \   00001D   2401         ADD     A,#0x1
+   \   00001F   0E           INC     R6
+   \   000020   EF           MOV     A,R7
+   \   000021   3400         ADDC    A,#0x0
+   \   000023   FF           MOV     R7,A
+   \                     ??GetCrcData_0:
+   \   000024   C3           CLR     C
+   \   000025   EE           MOV     A,R6
+   \   000026   9C           SUBB    A,R4
+   \   000027   EF           MOV     A,R7
+   \   000028   9D           SUBB    A,R5
+   \   000029   501E         JNC     ??GetCrcData_4
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   A3           INC     DPTR
+   \   00002D   68           XRL     A,R0
+   \   00002E   F8           MOV     R0,A
+   \   00002F   75..08       MOV     ?V0 + 0,#0x8
+   \                     ??GetCrcData_3:
+   \   000032   E8           MOV     A,R0
+   \   000033   FA           MOV     R2,A
+   \   000034   E9           MOV     A,R1
+   \   000035   C3           CLR     C
+   \   000036   13           RRC     A
+   \   000037   FB           MOV     R3,A
+   \   000038   EA           MOV     A,R2
+   \   000039   13           RRC     A
+   \   00003A   FA           MOV     R2,A
+   \   00003B   E8           MOV     A,R0
+   \   00003C   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00003E   EA           MOV     A,R2
+   \   00003F   50D2         JNC     ??GetCrcData_1
+   \   000041   6401         XRL     A,#0x1
+   \   000043   F8           MOV     R0,A
+   \   000044   EB           MOV     A,R3
+   \   000045   64A0         XRL     A,#0xa0
+   \   000047   80CC         SJMP    ??GetCrcData_2
+     38              }
+     39            }
+     40            uint8 CRC_L;//定义数组
+     41            uint8 CRC_H;
+     42            CRC_L = wcrc&0xff;//crc的低八位
+     43            CRC_H = wcrc >> 8;//crc的高八位
+     44            return ((CRC_L << 8) | CRC_H);
+   \                     ??GetCrcData_4:
+   \   000049   E8           MOV     A,R0
+   \   00004A   FB           MOV     R3,A
+   \   00004B   E9           MOV     A,R1
+   \   00004C   FA           MOV     R2,A
+   \   00004D   7F02         MOV     R7,#0x2
+   \   00004F   02....       LJMP    ?BANKED_LEAVE_XDATA
+     45          }
+     46          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          uint8 isCRC(uint8 *buffer,uint16 len)
+   \                     isCRC:
+     48          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+     49            if(buffer[len-2] == 0 || buffer[len-1] == 0){
+   \   000005   EA           MOV     A,R2
+   \   000006   2C           ADD     A,R4
+   \   000007   F8           MOV     R0,A
+   \   000008   EB           MOV     A,R3
+   \   000009   3D           ADDC    A,R5
+   \   00000A   F9           MOV     R1,A
+   \   00000B   E8           MOV     A,R0
+   \   00000C   24FE         ADD     A,#-0x2
+   \   00000E   FE           MOV     R6,A
+   \   00000F   E9           MOV     A,R1
+   \   000010   34FF         ADDC    A,#-0x1
+   \   000012   FF           MOV     R7,A
+   \   000013   8E82         MOV     DPL,R6
+   \   000015   8F83         MOV     DPH,R7
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   6013         JZ      ??isCRC_0
+   \   00001A   E8           MOV     A,R0
+   \   00001B   24FF         ADD     A,#-0x1
+   \   00001D   18           DEC     R0
+   \   00001E   E9           MOV     A,R1
+   \   00001F   34FF         ADDC    A,#-0x1
+   \   000021   F9           MOV     R1,A
+   \   000022   88..         MOV     ?V0 + 0,R0
+   \   000024   89..         MOV     ?V0 + 1,R1
+   \   000026   8882         MOV     DPL,R0
+   \   000028   F583         MOV     DPH,A
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   7004         JNZ     ??isCRC_1
+     50             return 'f'; 
+   \                     ??isCRC_0:
+   \   00002D   7966         MOV     R1,#0x66
+   \   00002F   8028         SJMP    ??isCRC_2
+     51            }
+     52            uint16 itsCRC = GetCrcData(buffer, len-2);
+     53            uint16 buffCRC = ((buffer[len-2]) << 8 | buffer[len-1]);
+     54            if(itsCRC == buffCRC){
+   \                     ??isCRC_1:
+   \   000031                ; Setup parameters for call to function GetCrcData
+   \   000031   EC           MOV     A,R4
+   \   000032   24FE         ADD     A,#-0x2
+   \   000034   1C           DEC     R4
+   \   000035   1C           DEC     R4
+   \   000036   ED           MOV     A,R5
+   \   000037   34FF         ADDC    A,#-0x1
+   \   000039   FD           MOV     R5,A
+   \   00003A   12....       LCALL   ??GetCrcData?relay
+   \   00003D   8A..         MOV     ?V0 + 2,R2
+   \   00003F   8B..         MOV     ?V0 + 3,R3
+   \   000041   8E82         MOV     DPL,R6
+   \   000043   8F83         MOV     DPH,R7
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   F9           MOV     R1,A
+   \   000047   85..82       MOV     DPL,?V0 + 0
+   \   00004A   85..83       MOV     DPH,?V0 + 1
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   65..         XRL     A,?V0 + 2
+   \   000050   7003         JNZ     ??isCRC_3
+   \   000052   E9           MOV     A,R1
+   \   000053   65..         XRL     A,?V0 + 3
+   \                     ??isCRC_3:
+   \   000055   70D6         JNZ     ??isCRC_0
+     55              return 't';
+   \   000057   7974         MOV     R1,#0x74
+     56            }else{
+   \                     ??isCRC_2:
+   \   000059                REQUIRE ?Subroutine0
+   \   000059                ; // Fall through to label ?Subroutine0
+     57              return 'f';
+     58            }
+     59          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     60          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     61          uint8 getValue(uint8 *buffer, uint8 len)
+   \                     getValue:
+     62          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+     63            if(isCRC(buffer,len) == 't')
+   \   00000B                ; Setup parameters for call to function isCRC
+   \   00000B   89..         MOV     ?V0 + 2,R1
+   \   00000D   AC..         MOV     R4,?V0 + 2
+   \   00000F   7D00         MOV     R5,#0x0
+   \   000011   12....       LCALL   ??isCRC?relay
+   \   000014   E9           MOV     A,R1
+   \   000015   6474         XRL     A,#0x74
+   \   000017   706E         JNZ     ??getValue_0
+     64            {
+     65              if(len == 7)  //CO2
+   \   000019   7407         MOV     A,#0x7
+   \   00001B   65..         XRL     A,?V0 + 0
+   \   00001D   706D         JNZ     ??getValue_1
+     66              {
+     67                CO2 = ((buffer[3]) << 8 | buffer[4]);
+   \   00001F   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000022   90....       MOV     DPTR,#CO2
+   \   000025   12....       LCALL   ??Subroutine7_0 & 0xFFFF
+     68                 if(CO2 <10000 && CO2>0)
+   \                     ??CrossCallReturnLabel_11:
+   \   000028   90....       MOV     DPTR,#CO2
+   \   00002B   C3           CLR     C
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   9410         SUBB    A,#0x10
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   9427         SUBB    A,#0x27
+   \   000033   5052         JNC     ??getValue_0
+   \   000035   E8           MOV     A,R0
+   \   000036   49           ORL     A,R1
+   \   000037   604E         JZ      ??getValue_0
+     69                 {
+     70                    CO2_qian = CO2/1000;
+   \   000039   7AE8         MOV     R2,#-0x18
+   \   00003B   7B03         MOV     R3,#0x3
+   \   00003D   12....       LCALL   ?US_DIV_MOD
+   \   000040   90....       MOV     DPTR,#CO2_qian
+   \   000043   12....       LCALL   ?Subroutine1 & 0xFFFF
+     71                    CO2_bai = (CO2%1000)/100;
+     72                    CO2_shi = (CO2%100)/10;
+     73                    CO2_ge = CO2%10;
+     74                 }else{
+   \                     ??CrossCallReturnLabel_0:
+   \   000046   7AE8         MOV     R2,#-0x18
+   \   000048   7B03         MOV     R3,#0x3
+   \   00004A   12....       LCALL   ?US_DIV_MOD
+   \   00004D   EA           MOV     A,R2
+   \   00004E   F8           MOV     R0,A
+   \   00004F   EB           MOV     A,R3
+   \   000050   F9           MOV     R1,A
+   \   000051   7A64         MOV     R2,#0x64
+   \   000053   7B00         MOV     R3,#0x0
+   \   000055   12....       LCALL   ?US_DIV_MOD
+   \   000058   90....       MOV     DPTR,#CO2_bai
+   \   00005B   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00005E   7A64         MOV     R2,#0x64
+   \   000060   7B00         MOV     R3,#0x0
+   \   000062   12....       LCALL   ?US_DIV_MOD
+   \   000065   EA           MOV     A,R2
+   \   000066   F8           MOV     R0,A
+   \   000067   EB           MOV     A,R3
+   \   000068   F9           MOV     R1,A
+   \   000069   7A0A         MOV     R2,#0xa
+   \   00006B   7B00         MOV     R3,#0x0
+   \   00006D   12....       LCALL   ?US_DIV_MOD
+   \   000070   90....       MOV     DPTR,#CO2_shi
+   \   000073   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000076   7A0A         MOV     R2,#0xa
+   \   000078   7B00         MOV     R3,#0x0
+   \   00007A   12....       LCALL   ?US_DIV_MOD
+   \   00007D   90....       MOV     DPTR,#CO2_ge
+   \   000080   EA           MOV     A,R2
+   \   000081   F0           MOVX    @DPTR,A
+   \   000082   A3           INC     DPTR
+   \   000083   EB           MOV     A,R3
+   \   000084   02....       LJMP    ??getValue_2 & 0xFFFF
+     75                   return false; 
+   \                     ??getValue_0:
+   \   000087   7900         MOV     R1,#0x0
+   \   000089   02....       LJMP    ??getValue_3 & 0xFFFF
+     76                 }
+     77              }
+     78              
+     79              if(len == 9)   //温度湿度
+   \                     ??getValue_1:
+   \   00008C   7409         MOV     A,#0x9
+   \   00008E   65..         XRL     A,?V0 + 0
+   \   000090   6003         JZ      $+5
+   \   000092   02....       LJMP    ??getValue_4 & 0xFFFF
+     80              {
+     81                humidity485 = ((buffer[3]) << 8 | buffer[4]);
+   \   000095   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000098   90....       MOV     DPTR,#humidity485
+   \   00009B   12....       LCALL   ??Subroutine7_0 & 0xFFFF
+     82                 if(humidity485 <1000 && humidity485>0)
+   \                     ??CrossCallReturnLabel_12:
+   \   00009E   90....       MOV     DPTR,#humidity485
+   \   0000A1   C3           CLR     C
+   \   0000A2   E0           MOVX    A,@DPTR
+   \   0000A3   94E8         SUBB    A,#-0x18
+   \   0000A5   A3           INC     DPTR
+   \   0000A6   E0           MOVX    A,@DPTR
+   \   0000A7   9403         SUBB    A,#0x3
+   \   0000A9   50DC         JNC     ??getValue_0
+   \   0000AB   E8           MOV     A,R0
+   \   0000AC   49           ORL     A,R1
+   \   0000AD   60D8         JZ      ??getValue_0
+     83                 {
+     84                    humidity_shi = humidity485/100;
+   \   0000AF   7A64         MOV     R2,#0x64
+   \   0000B1   7B00         MOV     R3,#0x0
+   \   0000B3   12....       LCALL   ?US_DIV_MOD
+   \   0000B6   90....       MOV     DPTR,#humidity_shi
+   \   0000B9   12....       LCALL   ?Subroutine3 & 0xFFFF
+     85                    humidity_ge = (humidity485%100)/10;
+   \                     ??CrossCallReturnLabel_5:
+   \   0000BC   7A64         MOV     R2,#0x64
+   \   0000BE   7B00         MOV     R3,#0x0
+   \   0000C0   12....       LCALL   ?US_DIV_MOD
+   \   0000C3   EA           MOV     A,R2
+   \   0000C4   F8           MOV     R0,A
+   \   0000C5   EB           MOV     A,R3
+   \   0000C6   F9           MOV     R1,A
+   \   0000C7   7A0A         MOV     R2,#0xa
+   \   0000C9   7B00         MOV     R3,#0x0
+   \   0000CB   12....       LCALL   ?US_DIV_MOD
+   \   0000CE   90....       MOV     DPTR,#humidity_ge
+   \   0000D1   12....       LCALL   ?Subroutine3 & 0xFFFF
+     86                    humidity_xiao = humidity485%10;
+   \                     ??CrossCallReturnLabel_6:
+   \   0000D4   7A0A         MOV     R2,#0xa
+   \   0000D6   7B00         MOV     R3,#0x0
+   \   0000D8   12....       LCALL   ?US_DIV_MOD
+   \   0000DB   90....       MOV     DPTR,#humidity_xiao
+   \   0000DE   EA           MOV     A,R2
+   \   0000DF   F0           MOVX    @DPTR,A
+   \   0000E0   A3           INC     DPTR
+   \   0000E1   EB           MOV     A,R3
+   \   0000E2   F0           MOVX    @DPTR,A
+     87                    HATstr[0] = 'h';
+   \   0000E3   90....       MOV     DPTR,#HATstr
+   \   0000E6   7468         MOV     A,#0x68
+   \   0000E8   F0           MOVX    @DPTR,A
+     88                    HATstr[1] = humidity_shi+0x30;
+   \   0000E9   90....       MOV     DPTR,#humidity_shi
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   2430         ADD     A,#0x30
+   \   0000EF   90....       MOV     DPTR,#HATstr + 1
+   \   0000F2   F0           MOVX    @DPTR,A
+     89                    HATstr[2] = humidity_ge+0x30;
+   \   0000F3   90....       MOV     DPTR,#humidity_ge
+   \   0000F6   E0           MOVX    A,@DPTR
+   \   0000F7   2430         ADD     A,#0x30
+   \   0000F9   90....       MOV     DPTR,#HATstr + 2
+   \   0000FC   F0           MOVX    @DPTR,A
+     90                    HATstr[3] = '.';
+   \   0000FD   A3           INC     DPTR
+   \   0000FE   742E         MOV     A,#0x2e
+   \   000100   F0           MOVX    @DPTR,A
+     91                    HATstr[4] = humidity_xiao+0x30;
+   \   000101   90....       MOV     DPTR,#humidity_xiao
+   \   000104   E0           MOVX    A,@DPTR
+   \   000105   2430         ADD     A,#0x30
+   \   000107   90....       MOV     DPTR,#HATstr + 4
+   \   00010A   F0           MOVX    @DPTR,A
+     92                    HATstr[5] = '%';
+   \   00010B   A3           INC     DPTR
+   \   00010C   7425         MOV     A,#0x25
+   \   00010E   F0           MOVX    @DPTR,A
+     93                    HATstr[6] = '\t';
+   \   00010F   A3           INC     DPTR
+   \   000110   7409         MOV     A,#0x9
+   \   000112   F0           MOVX    @DPTR,A
+     94                 }else{
+     95                   return false; 
+     96                 }
+     97                 
+     98                 temperture = ((buffer[5]) << 8 | buffer[6]);
+   \   000113   8E82         MOV     DPL,R6
+   \   000115   8F83         MOV     DPH,R7
+   \   000117   A3           INC     DPTR
+   \   000118   A3           INC     DPTR
+   \   000119   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   00011C   A3           INC     DPTR
+   \   00011D   A3           INC     DPTR
+   \   00011E   E0           MOVX    A,@DPTR
+   \   00011F   F8           MOV     R0,A
+   \   000120   90....       MOV     DPTR,#temperture
+   \   000123   12....       LCALL   ??Subroutine7_0 & 0xFFFF
+     99                 if(temperture <1000 && temperture>0)
+   \                     ??CrossCallReturnLabel_13:
+   \   000126   90....       MOV     DPTR,#temperture
+   \   000129   C3           CLR     C
+   \   00012A   E0           MOVX    A,@DPTR
+   \   00012B   94E8         SUBB    A,#-0x18
+   \   00012D   A3           INC     DPTR
+   \   00012E   E0           MOVX    A,@DPTR
+   \   00012F   9403         SUBB    A,#0x3
+   \   000131   4003         JC      $+5
+   \   000133   02....       LJMP    ??getValue_0 & 0xFFFF
+   \   000136   E8           MOV     A,R0
+   \   000137   49           ORL     A,R1
+   \   000138   7003         JNZ     $+5
+   \   00013A   02....       LJMP    ??getValue_0 & 0xFFFF
+    100                 {
+    101                    temperture_shi = temperture/100;
+   \   00013D   7A64         MOV     R2,#0x64
+   \   00013F   7B00         MOV     R3,#0x0
+   \   000141   12....       LCALL   ?US_DIV_MOD
+   \   000144   90....       MOV     DPTR,#temperture_shi
+   \   000147   12....       LCALL   ?Subroutine4 & 0xFFFF
+    102                    temperture_ge = (temperture%100)/10;
+   \                     ??CrossCallReturnLabel_7:
+   \   00014A   7A64         MOV     R2,#0x64
+   \   00014C   7B00         MOV     R3,#0x0
+   \   00014E   12....       LCALL   ?US_DIV_MOD
+   \   000151   EA           MOV     A,R2
+   \   000152   F8           MOV     R0,A
+   \   000153   EB           MOV     A,R3
+   \   000154   F9           MOV     R1,A
+   \   000155   7A0A         MOV     R2,#0xa
+   \   000157   7B00         MOV     R3,#0x0
+   \   000159   12....       LCALL   ?US_DIV_MOD
+   \   00015C   90....       MOV     DPTR,#temperture_ge
+   \   00015F   12....       LCALL   ?Subroutine4 & 0xFFFF
+    103                    temperture_xiao = temperture%10;
+   \                     ??CrossCallReturnLabel_8:
+   \   000162   7A0A         MOV     R2,#0xa
+   \   000164   7B00         MOV     R3,#0x0
+   \   000166   12....       LCALL   ?US_DIV_MOD
+   \   000169   90....       MOV     DPTR,#temperture_xiao
+   \   00016C   EA           MOV     A,R2
+   \   00016D   F0           MOVX    @DPTR,A
+   \   00016E   A3           INC     DPTR
+   \   00016F   EB           MOV     A,R3
+   \   000170   F0           MOVX    @DPTR,A
+    104                    HATstr[7] = 't';
+   \   000171   90....       MOV     DPTR,#HATstr + 7
+   \   000174   7474         MOV     A,#0x74
+   \   000176   F0           MOVX    @DPTR,A
+    105                    HATstr[8] = temperture_shi+0x30;
+   \   000177   90....       MOV     DPTR,#temperture_shi
+   \   00017A   E0           MOVX    A,@DPTR
+   \   00017B   2430         ADD     A,#0x30
+   \   00017D   90....       MOV     DPTR,#HATstr + 8
+   \   000180   F0           MOVX    @DPTR,A
+    106                    HATstr[9] = temperture_ge+0x30;
+   \   000181   90....       MOV     DPTR,#temperture_ge
+   \   000184   E0           MOVX    A,@DPTR
+   \   000185   2430         ADD     A,#0x30
+   \   000187   90....       MOV     DPTR,#HATstr + 9
+   \   00018A   F0           MOVX    @DPTR,A
+    107                    HATstr[10] = '.';
+   \   00018B   A3           INC     DPTR
+   \   00018C   742E         MOV     A,#0x2e
+   \   00018E   F0           MOVX    @DPTR,A
+    108                    HATstr[11] = temperture_xiao+0x30;
+   \   00018F   90....       MOV     DPTR,#temperture_xiao
+   \   000192   E0           MOVX    A,@DPTR
+   \   000193   2430         ADD     A,#0x30
+   \   000195   90....       MOV     DPTR,#HATstr + 11
+   \   000198   F0           MOVX    @DPTR,A
+    109                    HATstr[12] = '\0';
+   \   000199   A3           INC     DPTR
+   \   00019A   E4           CLR     A
+   \                     ??getValue_2:
+   \   00019B   F0           MOVX    @DPTR,A
+    110                 }else{
+    111                   return false; 
+    112                 }
+    113              }
+    114              return 1;
+   \                     ??getValue_4:
+   \   00019C   7901         MOV     R1,#0x1
+    115            }
+   \                     ??getValue_3:
+   \   00019E   02....       LJMP    ?Subroutine0 & 0xFFFF
+    116            else
+    117            {
+    118             return 0;
+    119            }
+    120          
+    121          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000003   90....       MOV     DPTR,#temperture
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F8           MOV     R0,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F9           MOV     R1,A
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   000003   90....       MOV     DPTR,#humidity485
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F8           MOV     R0,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F9           MOV     R1,A
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E8           MOV     A,R0
+   \   000001                REQUIRE ??Subroutine7_0
+   \   000001                ; // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine7_0:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   E9           MOV     A,R1
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   8E82         MOV     DPL,R6
+   \   000002   8F83         MOV     DPH,R7
+   \   000004   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F8           MOV     R0,A
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   8E82         MOV     DPL,R6
+   \   000007   8F83         MOV     DPH,R7
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   A3           INC     DPTR
+   \   00000C   A3           INC     DPTR
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   000003   90....       MOV     DPTR,#CO2
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F8           MOV     R0,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F9           MOV     R1,A
+   \   00000B   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GetCrcData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GetCrcData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??isCRC?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    isCRC
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??getValue?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    getValue
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     GetCrcData          0      0     22
+     getValue            0      0     12
+       -> isCRC          0      0     24
+     isCRC               0      0     24
+       -> GetCrcData     0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label     Bytes
+     --------------     -----
+     Rx1_num               1
+     temperture            2
+     temperture_shi        2
+     temperture_ge         2
+     temperture_xiao       2
+     humidity485           2
+     humidity_shi          2
+     humidity_ge           2
+     humidity_xiao         2
+     CO2                   2
+     CO2_qian              2
+     CO2_bai               2
+     CO2_shi               2
+     CO2_ge                2
+     HATstr               13
+     GetCrcData           82
+     isCRC                89
+     ?Subroutine0          5
+     getValue            417
+     ?Subroutine4         12
+     ?Subroutine3         12
+     ?Subroutine6          1
+     ??Subroutine7_0       5
+     ?Subroutine2         10
+     ?Subroutine5         14
+     ?Subroutine1         12
+     ??GetCrcData?relay    6
+     ??isCRC?relay         6
+     ??getValue?relay      6
+
+ 
+ 659 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+  40 bytes in segment XDATA_Z
+ 
+ 677 bytes of CODE  memory
+  40 bytes of XDATA memory
+
+Errors: none
+Warnings: none

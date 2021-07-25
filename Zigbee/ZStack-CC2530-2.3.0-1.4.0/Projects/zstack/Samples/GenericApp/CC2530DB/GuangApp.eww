@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\GuangApp.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530DB\SampleApp.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\42.&#x534F;&#x8BAe;&#x6808;&#x53CC;&#x4e32;&#x53e3;\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\CC2530DB\SampleApp.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\testMQLIGHT\MQ2\sensor.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\12\Z-Stack&#x900F;&#x4F20;\Projects\zstack\Utilities\SerialApp\CC2530DB\SerialApp.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>GuangApp</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>GuangApp</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>GuangApp</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+      <member>
+        <project>GuangApp</project>
+        <configuration>CoordinatorEB-Pro</configuration>
+      </member>
+      <member>
+        <project>GuangApp</project>
+        <configuration>RouterEB-Pro</configuration>
+      </member>
+      <member>
+        <project>GuangApp</project>
+        <configuration>EndDeviceEB-Pro</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+
